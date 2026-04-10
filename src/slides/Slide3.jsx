@@ -111,8 +111,8 @@ export default function Slide3() {
             <span className="text-[11px] font-bold tracking-widest uppercase font-sans">April 2026</span>
           </div>
           <div className="flex items-center gap-2">
-            <i className="fas fa-user text-red-500 text-xs"></i>
-            <span className="text-[11px] font-bold tracking-widest uppercase font-sans">IT Development Team</span>
+            <i className="fas fa-mobile text-red-500 text-xs"></i>
+            <span className="text-[11px] font-bold tracking-widest uppercase font-sans">Sinar Mas Selluler</span>
           </div>
         </div>
         <div className="bg-red-600 px-5 py-1 rounded text-sm font-black italic shadow-lg shadow-red-900/20 uppercase tracking-tighter">V3.0</div>

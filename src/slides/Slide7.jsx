@@ -123,8 +123,8 @@ export default function Slide7() {
             <span className="text-[11px] font-bold tracking-widest uppercase font-sans">April 2026</span>
           </div>
           <div className="flex items-center gap-2">
-            <i className="fas fa-user text-red-500 text-xs"></i>
-            <span className="text-[11px] font-bold tracking-widest uppercase font-sans uppercase">IT Development Team</span>
+            <i className="fas fa-mobile text-red-500 text-xs"></i>
+            <span className="text-[11px] font-bold tracking-widest uppercase font-sans">Sinar Mas Selluler</span>
           </div>
         </div>
 

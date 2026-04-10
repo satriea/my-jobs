@@ -80,20 +80,18 @@ export default function Slide2() {
       <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-[#080808] border-t border-white/5 flex items-center justify-between px-16 z-20">
         <div className="absolute top-[-1px] left-0 h-[2px] bg-red-600 shadow-[0_0_15px_#E31E24]" style={{ width: '25%' }}></div>
 
-        <div className="flex gap-8 text-gray-500 text-left">
-          <div className="flex gap-2 items-center">
-             <i className="fas fa-user-tie text-red-500 text-[10px]"></i>
-             <span className="text-[9px] font-bold tracking-widest uppercase">IT Development Team</span>
+        <div className="flex gap-10 text-gray-400">
+          <div className="flex items-center gap-2">
+            <i className="fas fa-calendar-alt text-red-500 text-xs"></i>
+            <span className="text-[11px] font-bold tracking-widest uppercase font-sans">April 2026</span>
           </div>
-          <div className="flex gap-2 items-center">
-             <i className="fas fa-calendar-alt text-red-500 text-[10px]"></i>
-             <span className="text-[9px] font-bold tracking-widest uppercase font-sans">APRIL 2026</span>
+          <div className="flex items-center gap-2">
+            <i className="fas fa-mobile text-red-500 text-xs"></i>
+            <span className="text-[11px] font-bold tracking-widest uppercase font-sans">Sinar Mas Selluler</span>
           </div>
         </div>
 
-        <div className="bg-white/5 border border-white/10 px-4 py-1.5 rounded-lg text-sm font-black italic">
-          <span className="text-red-500 text-lg">2</span> <span className="text-white/20 mx-1">/</span> <span className="text-white/60">9</span>
-        </div>
+        <div className="bg-red-600 px-5 py-1 rounded text-sm font-black italic shadow-lg shadow-red-900/20 uppercase tracking-tighter">V3.0</div>
       </div>
     </div>
   );
