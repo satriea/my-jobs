@@ -59,23 +59,51 @@ export default function Slide4() {
         {/* Right Panel - Grid System - Optimized Space */}
         <div className="flex-1 flex flex-col justify-center gap-4 h-full py-4">
           
-          {/* Keuntungan Section */}
-          <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-5 shadow-inner">
-            <div className="flex items-center gap-3 mb-4 border-b border-white/5 pb-2">
-              <div className="w-7 h-7 bg-green-500/20 rounded-lg flex items-center justify-center text-green-500">
-                <i className="fas fa-shield-check text-xs"></i>
+        {/* Comparison Section - Split 2 Columns */}
+        <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-5 shadow-inner">
+          <div className="flex items-center gap-3 mb-4 border-b border-white/5 pb-2">
+            <div className="w-7 h-7 bg-red-600/20 rounded-lg flex items-center justify-center text-red-500">
+              <i className="fas fa-exchange-alt text-xs"></i>
+            </div>
+            <div className="font-black text-[11px] uppercase tracking-widest text-left text-white/90">Analisis Perubahan Arsitektur</div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6">
+            
+            {/* Kolom Kiri - Kondisi Sebelumnya */}
+            <div className="space-y-2">
+              <div className="text-[10px] font-black text-red-500 uppercase tracking-tighter mb-2 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                Kondisi Sebelumnya (V2)
               </div>
-              <div className="font-black text-[11px] uppercase tracking-widest text-left text-white/90">Keuntungan Arsitektur Mandiri</div>
+              <div className="space-y-1.5">
+                <OldCondition text="WhatsApp menggunakan pihak ke-3 (bergantung pada vendor)" />
+                <OldCondition text="Biaya per tahun (Rp. 1.200.000)" />
+                <OldCondition text="Sistem kurang fleksibel" />
+                <OldCondition text="Integrasi terbatas" />
+                <OldCondition text="Nomor official tidak terdaftar WA Bisnis" />
+                <OldCondition text="Sering maintenance & error tiba-tiba" />
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-1.5">
-              <Benefit text="Lebih stabil & aman - Direct Official API dari Meta" />
-              <Benefit text="Kontrol penuh server mandiri tanpa limitasi pihak luar" />
-              <Benefit text="Lebih fleksibel & scalable untuk pengembangan custom" />
-              <Benefit text="Pengiriman real-time dengan latency minimal" />
-              <Benefit text="Template terverifikasi Meta - Minim risiko blokir" />
+            {/* Kolom Kanan - Keuntungan Mandiri */}
+            <div className="space-y-2">
+              <div className="text-[10px] font-black text-green-500 uppercase tracking-tighter mb-2 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_#22c55e]"></span>
+                Keuntungan Arsitektur Mandiri (V3)
+              </div>
+              <div className="space-y-1.5">
+                <Benefit text="Lebih stabil & aman - Direct Official API Meta" />
+                <Benefit text="Kontrol penuh server tanpa limitasi vendor" />
+                <Benefit text="Sangat fleksibel & scalable (Custom Dev)" />
+                <Benefit text="Pengiriman real-time (Latency Minimal)" />
+                <Benefit text="Template terverifikasi - Minim risiko blokir" />
+                <Benefit text="Official Meta Infrastructure 100%" />
+              </div>
             </div>
+
           </div>
+        </div>
 
           {/* Biaya Section - Table Style */}
           <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-5">
@@ -151,6 +179,16 @@ function Cost({ title, price, desc }) {
         <div className="text-red-500 font-black text-[13px] tracking-tight">{price}</div>
         <div className="text-[7px] text-white/20 uppercase font-bold leading-none">/ unit</div>
       </div>
+    </div>
+  );
+}
+
+{/* Tambahkan Component ini di bawah atau di luar Slide5/Slide6 function agar rapi */}
+function OldCondition({ text }) {
+  return (
+    <div className="flex gap-2 items-start bg-red-500/5 border border-red-500/10 p-1.5 px-3 rounded-lg group">
+      <i className="fas fa-times-circle text-red-500 text-[10px] mt-1 opacity-50 group-hover:opacity-100 transition-opacity"></i>
+      <div className="text-[10px] text-gray-400 font-medium text-left leading-tight group-hover:text-gray-200 transition-colors">{text}</div>
     </div>
   );
 }

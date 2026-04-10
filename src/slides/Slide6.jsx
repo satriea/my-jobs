@@ -50,12 +50,13 @@ export default function Slide6() {
                 <div className="text-xs font-black uppercase tracking-widest text-red-500">Pihak Ke-3 (Sistem Lama)</div>
               </div>
               <div className="flex items-center justify-between bg-black/40 p-4 rounded-2xl border border-white/5">
-                {[
-                  { icon: "fa-user", text: "Customer" },
-                  { icon: "fa-whatsapp", text: "WhatsApp", brand: true },
-                  { icon: "fa-building", text: "Vendor" },
-                  { icon: "fa-server", text: "Server" },
-                ].map((step, index) => (
+                  {[
+                    { icon: "fa-user", text: "Customer" },
+                    { icon: "fa-whatsapp", text: "WhatsApp App", brand: true },
+                    { icon: "fa-hdd", text: "Vendor Gateway" },
+                    { icon: "fa-exchange-alt", text: "API Bridge" },
+                    { icon: "fa-server", text: "Internal Server" },
+                  ].map((step, index) => (
                   <React.Fragment key={index}>
                     <div className="flex flex-col items-center gap-1.5 min-w-[60px]">
                       <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/40">
@@ -63,12 +64,12 @@ export default function Slide6() {
                       </div>
                       <span className="text-[9px] font-bold text-white/30 uppercase">{step.text}</span>
                     </div>
-                    {index < 3 && <i className="fas fa-chevron-right text-[10px] text-white/10"></i>}
+                    {index < 4 && <i className="fas fa-chevron-right text-[10px] text-white/10"></i>}
                   </React.Fragment>
                 ))}
               </div>
               <div className="text-[11px] text-red-400 italic bg-red-500/5 py-2 px-4 rounded-lg border border-red-500/10 text-center">
-                ● Alur lebih panjang, ketergantungan pihak ketiga tinggi
+                ● Vendor harus melakukan "Scanned Session" terus menerus agar koneksi tidak terputus
               </div>
             </div>
 
@@ -79,12 +80,13 @@ export default function Slide6() {
                 <div className="text-xs font-black uppercase tracking-widest text-green-500">Meta API (Sistem Baru)</div>
               </div>
               <div className="flex items-center justify-between bg-red-600/5 p-4 rounded-2xl border border-red-500/20">
-                {[
-                  { icon: "fa-user", text: "Customer" },
-                  { icon: "fa-whatsapp", text: "WhatsApp", brand: true },
-                  { icon: "fa-cloud", text: "Meta API" },
-                  { icon: "fa-database", text: "Server DB" },
-                ].map((step, index) => (
+                    {[
+                      { icon: "fa-user", text: "Customer" },
+                      { icon: "fa-whatsapp", text: "WhatsApp APP", brand: true },
+                      { icon: "fa-cloud", text: "Meta API Server" },
+                      { icon: "fa-bolt", text: "Direct Webhook" },
+                      { icon: "fa-server", text: "Internal Server" },
+                    ].map((step, index) => (
                   <React.Fragment key={index}>
                     <div className="flex flex-col items-center gap-1.5 min-w-[60px] group">
                       <div className="w-9 h-9 rounded-xl bg-red-600/20 border border-red-600/30 flex items-center justify-center text-red-500 group-hover:bg-red-600 group-hover:text-white transition-all">
@@ -97,7 +99,7 @@ export default function Slide6() {
                 ))}
               </div>
               <div className="text-[11px] text-green-400 italic bg-green-500/5 py-2 px-4 rounded-lg border border-green-500/10 text-center">
-                ● Alur ringkas, tanpa vendor, kontrol penuh infrastruktur
+                ● Zero Downtime: Infrastruktur dikelola langsung oleh Meta (99.9% Uptime).
               </div>
             </div>
           </div>
@@ -105,32 +107,77 @@ export default function Slide6() {
 
         {/* COMPARISON TABLE SECTION */}
         <div className="grid grid-cols-2 gap-8">
-          {/* LEFT TABLE */}
-          <div className="space-y-2">
-            {[
-              "Lebih panjang - Alur lebih kompleks",
-              "Biaya vendor - Beban biaya tahunan",
-              "Bergantung vendor - Maintenance terbatas",
-            ].map((text, i) => (
-              <div key={i} className="flex items-center gap-3 bg-white/[0.02] border border-white/5 p-3 rounded-xl hover:bg-white/[0.05] transition-all">
-                <i className="fas fa-times-circle text-red-500/50"></i>
-                <div className="text-gray-400 text-xs text-left">{text}</div>
-              </div>
-            ))}
+          {/* LEFT TABLE - Dipecah Menjadi 2 Kolom */}
+          <div className="grid grid-cols-2 gap-3">
+            
+            {/* Kolom Kiri (Poin 1, 2, 3) */}
+            <div className="space-y-2">
+              {[
+                "Double Latency: Ada dua pemberhentian (Server Vendor & API Bridge) sebelum sampai ke Anda.",
+                "Pesan tertahan di Server Vendor sebelum diteruskan ke Webhook Internal",            
+                "Jika nomor HP yang di-scan di dashboard Watzap logout atau baterai HP mati, alur nomor 2 dan 3 langsung gagal total",
+              ].map((text, i) => (
+                <div key={i} className="flex items-center gap-3 bg-white/[0.02] border border-white/5 p-1 rounded-xl hover:bg-white/[0.05] transition-all min-h-[40px]">
+                  <i className="fas fa-times-circle text-red-500/50 text-xs"></i>
+                  <div className="text-gray-400 text-[10px] font-bold tracking-tight text-left leading-tight">
+                    {text}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Kolom Kanan (Poin ke-4) */}
+            <div className="space-y-2">
+              {[              
+                "Privacy: Data pesan mampir dan terbaca di database pihak ketiga sebelum sampai ke perusahaan.",        
+                "Biaya vendor - Beban biaya tahunan",
+                "Bergantung vendor - Maintenance terbatas",
+              ].map((text, i) => (
+                <div key={i} className="flex items-center gap-3 bg-white/[0.02] border border-white/5 p-1 rounded-xl hover:bg-white/[0.05] transition-all min-h-[40px]">
+                  <i className="fas fa-times-circle text-red-500/50 text-xs"></i>
+                  <div className="text-gray-400 text-[10px] font-bold tracking-tight text-left leading-tight">
+                    {text}
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
 
-          {/* RIGHT TABLE */}
-          <div className="space-y-2">
-            {[
-              "Lebih pendek - Alur jauh lebih efisien",
-              "Tanpa vendor - Optimasi biaya per pesan",
-              "Kontrol penuh - Maintenance mandiri & scalable",
-            ].map((text, i) => (
-              <div key={i} className="flex items-center gap-3 bg-red-600/5 border border-red-600/10 p-3 rounded-xl hover:border-red-600/30 transition-all">
-                <i className="fas fa-check-circle text-green-500"></i>
-                <div className="text-white text-xs font-medium text-left">{text}</div>
-              </div>
-            ))}
+          {/* RIGHT TABLE - Dipecah Menjadi 2 Kolom (Sesuai Benchmark V3) */}
+          <div className="grid grid-cols-2 gap-3">
+            
+            {/* Kolom Kiri (Poin 1, 2, 3) */}
+            <div className="space-y-2">
+              {[
+                "Meta mengirimkan data secara real-time menggunakan protokol HTTP yang sangat cepat ke endpoint server Anda. Latensi biasanya di bawah 500ms.",
+                "Pesan tidak lagi mampir ke server vendor. customer kirim pesan, infrastruktur global Meta langsung menerimanya.",
+                "Kontrol penuh - Maintenance mandiri & scalable",
+              ].map((text, i) => (
+                <div key={i} className="flex items-center gap-3 bg-red-600/5 border border-red-600/10 p-1 rounded-xl hover:border-red-600/30 transition-all min-h-[40px]">
+                  <i className="fas fa-check-circle text-green-500 text-xs"></i>
+                  <div className="text-white text-[10px] tracking-tight text-left leading-tight">
+                    {text}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-2">
+              {[
+                "End-to-End Encryption",
+                "Keamanan data terjamin langsung dari Meta ke Server Internal tanpa perantara.",
+                "Infrastruktur Resmi, terdaftar sebagai Official Business Account",
+              ].map((text, i) => (
+                <div key={i} className="flex items-center gap-3 bg-red-600/5 border border-red-600/10 p-1 rounded-xl hover:border-red-600/30 transition-all min-h-[40px]">
+                  <i className="fas fa-check-circle text-green-500 text-xs"></i>
+                  <div className="text-white text-[10px] tracking-tight text-left leading-tight">
+                    {text}
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
         </div>
 

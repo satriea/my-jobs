@@ -44,18 +44,32 @@ export default function Slide3() {
               "Notifikasi hanya via WhatsApp saja",
               "Detail info belum menampilkan Member ID",
               "Claim proteksi belum ada - Form belum terstruktur",
-              "Monitoring terbatas - Tracking belum real-time"
+              "Monitoring terbatas - Tracking belum real-time",
+              "Integrasi data claim ke bank belum optimal",
+              "Tracking claim belum real-time"
             ]}
             check={false}
           />
 
-          {/* Versus Divider - Slimmer */}
+          {/* Versus Divider - Bold & Glowing */}
           <div className="flex flex-col items-center justify-center">
-            <div className="h-full w-[1px] bg-white/10"></div>
-            <div className="my-2 w-8 h-8 rounded-full border border-white/20 flex items-center justify-center italic font-black text-white/30 text-[10px] bg-black">
-              VS
+            {/* Garis Atas */}
+            <div className="h-full w-[2px] bg-gradient-to-b from-transparent via-white/20 to-red-500/40"></div>
+            
+            {/* Lingkaran VS */}
+            <div className="relative my-4 group">
+              {/* Efek Glow di belakang lingkaran */}
+              <div className="absolute inset-0 bg-red-600 blur-lg opacity-30 group-hover:opacity-60 transition-opacity"></div>
+              
+              <div className="relative w-14 h-14 rounded-full border-2 border-red-500/50 flex items-center justify-center bg-[#0a0a0a] shadow-[0_0_20px_rgba(227,30,36,0.2)]">
+                <span className="italic font-black text-white text-lg tracking-tighter drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
+                  VS
+                </span>
+              </div>
             </div>
-            <div className="h-full w-[1px] bg-white/10"></div>
+            
+            {/* Garis Bawah */}
+            <div className="h-full w-[2px] bg-gradient-to-t from-transparent via-white/20 to-red-500/40"></div>
           </div>
 
           {/* RIGHT - V3 Card */}
@@ -71,7 +85,9 @@ export default function Slide3() {
               "Form input claim tersedia (CRM Kepala Toko)",
               "Notifikasi email real-time ke customer",
               "Monitoring claim real-time - Dashboard jelas",
-              "Pengambilan data lebih cepat & terkontrol"
+              "Pengambilan data lebih cepat & terkontrol",
+              "Data claim tersimpan di database ",
+              "Notifikasi sukses maupun error menampilkan data member ID customer"
             ]}
             check={true}
             highlight={true}

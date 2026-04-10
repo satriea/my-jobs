@@ -1,147 +1,130 @@
+import React from "react";
+
 export default function Slide2() {
   return (
-    <div className="w-[1280px] h-[720px] relative overflow-hidden bg-[#0f0f0f] text-white font-sans selection:bg-red-500/30">
+    <div className="w-[1280px] h-[720px] relative overflow-hidden bg-[#0a0a0a] text-white font-sans">
       
-      {/* Background Decorative Elements */}
-      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-[-10%] right-[10%] w-[400px] h-[400px] bg-red-900/10 rounded-full blur-[100px]"></div>
+      {/* Background Glow */}
+      <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] bg-red-600/5 rounded-full blur-[120px]"></div>
 
-      {/* Header - Konsisten dengan Slide 1 */}
-      <div className="absolute top-0 left-0 right-0 h-[90px] z-20 flex items-center px-12">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#E31E24] to-[#8b1216] opacity-95 shadow-xl"></div>
-        <div className="relative flex items-center gap-5">
-          <div className="bg-white/20 p-2.5 rounded-xl backdrop-blur-md border border-white/30">
-             <i className="fas fa-list-alt text-2xl text-white"></i>
+      {/* Header - Dibuat lebih ramping (px-10) agar tidak mepet tepi */}
+      <div className="absolute top-0 left-0 right-0 h-[80px] z-30 flex items-center px-10">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#b91c1c] via-[#E31E24] to-[#b91c1c] opacity-95 border-b border-red-500/20"></div>
+        <div className="relative flex items-center gap-4 text-left">
+          <div className="bg-white/10 p-2 rounded-xl backdrop-blur-md border border-white/20 text-white">
+             <i className="fas fa-th-list text-xl"></i>
           </div>
           <div>
-            <div className="text-2xl font-black tracking-tighter italic uppercase text-left">DAFTAR ISI</div>
-            <div className="text-[10px] uppercase tracking-[0.2em] text-white/70 font-semibold text-left">Agenda & Key Highlights</div>
+            <div className="text-xl font-black tracking-tighter italic uppercase leading-none mb-1 text-left">STRATEGIC AGENDA</div>
+            <div className="text-[9px] uppercase tracking-[0.2em] text-white/70 font-bold text-left text-nowrap">Membership V3.0 • Roadmap & Key Milestones</div>
           </div>
         </div>
-        <div className="ml-auto relative">
-          <div className="bg-black/20 backdrop-blur-md border border-white/10 px-4 py-2 rounded-lg text-xs font-medium tracking-widest uppercase">
-            8 Poin Utama Presentasi
+        <div className="ml-auto relative hidden md:block">
+          <div className="bg-black/40 px-4 py-2 rounded-lg text-[9px] font-bold tracking-widest uppercase border border-white/10">
+            9 Key Tech Pillars
           </div>
         </div>
       </div>
 
-      {/* Content Area - Tinggi disesuaikan (720 - 90 - 70 = 560px) */}
-      <div className="absolute top-[90px] left-0 right-0 h-[560px] flex px-16 gap-12 items-center z-10">
+      {/* Content Area - Padding horizontal ditambah (px-20) agar konten menjauh dari tepi layar */}
+      <div className="absolute top-[80px] left-0 right-0 h-[570px] flex px-20 gap-10 items-center z-10 py-6">
 
-        {/* Left Panel - Information Summary */}
-        <div className="w-[32%] flex flex-col gap-6">
+        {/* Left Panel - Ramping (w-[28%]) */}
+        <div className="w-[28%] flex flex-col gap-5">
           <SidebarCard
-            icon="fa-info-circle"
-            title="Ringkasan"
-            text="Fokus utama pada migrasi infrastruktur V2 ke V3, penguatan security layer BCA, serta efisiensi biaya melalui integrasi direct API Meta."
+            icon="fa-briefcase"
+            title="Objektif"
+            text="Transformasi menyeluruh arsitektur Membership: Migrasi V2 ke V3, Integrasi BCA Security Layer, & Optimasi API Meta Resmi."
           />
 
           <SidebarCard
-            icon="fa-clock"
-            title="Estimasi Durasi"
+            icon="fa-user-clock"
+            title="Alokasi Waktu"
             text={
-              <div className="space-y-2 mt-1">
-                <div className="flex justify-between items-center border-b border-white/5 pb-2">
-                   <span className="text-gray-400">Presentasi</span>
-                   <span className="text-white font-bold">20 Menit</span>
+              <div className="space-y-2 mt-1 text-left">
+                <div className="flex justify-between items-center border-b border-white/5 pb-1">
+                   <span className="text-gray-500 text-[11px]">Presentasi</span>
+                   <span className="text-white font-black text-sm">20 <span className="text-[9px] text-gray-500 uppercase">Min</span></span>
                 </div>
-                <div className="flex justify-between items-center border-b border-white/5 pb-2">
-                   <span className="text-gray-400">Sesi Q&A</span>
-                   <span className="text-white font-bold">10 Menit</span>
+                <div className="flex justify-between items-center">
+                   <span className="text-gray-500 text-[11px]">Sesi Q&A</span>
+                   <span className="text-white font-black text-sm">10 <span className="text-[9px] text-gray-500 uppercase">Min</span></span>
                 </div>
               </div>
             }
           />
         </div>
 
-        {/* Right Panel - Agenda Grid */}
-        <div className="flex-1 h-full py-8">
-          <div className="grid grid-cols-2 gap-x-6 gap-y-4">
-            <AgendaItem no="01" icon="fa-exchange-alt" title="Membership V2 vs V3" desc="Komparasi fitur & security" />
-            <AgendaItem no="02" icon="fa-message" title="Development API Meta" desc="Direct official integration" />
-            <AgendaItem no="03" icon="fa-server" title="Webhook Monitoring" desc="Real-time message tracking" />
-            <AgendaItem no="04" icon="fa-project-diagram" title="Analisis Efisiensi" desc="Meta vs Third Party" />
-            <AgendaItem no="05" icon="fa-envelope" title="Notifikasi Email" desc="Cost & Delivery optimization" />
-            <AgendaItem no="06" icon="fa-chart-line" title="Business Impact" desc="Manfaat & efek jangka panjang" />
-            <AgendaItem no="07" icon="fa-calendar-alt" title="Implementation" desc="Timeline & deployment steps" />
-            <AgendaItem no="08" icon="fa-flag-checkered" title="Closing" desc="Kesimpulan & Next Steps" />
-          </div>
+        {/* Right Panel - Agenda List - Dibuat lebih ramping agar arrow tidak terpotong */}
+        <div className="flex-1 h-full flex flex-col justify-center space-y-5 pl-6 border-l border-white/5 relative">
+            
+            <div className="absolute top-0 left-[-1px] w-[1px] h-full bg-red-600/10">
+              <div className="absolute top-0 left-0 w-full bg-red-600 shadow-[0_0_10px_#E31E24]" style={{ height: '22%' }}></div>
+            </div>
+
+            <AgendaItem no="01" title="Membership V2 vs V3" desc="Komparasi Fitur & Arsitektur Keamanan" />
+            <AgendaItem no="02" title="Development API Meta" desc="Alur Integrasi Resmi Direct API" />
+            <AgendaItem no="03" title="Webhook Monitoring" desc="Sistem Pelacakan Pesan Real-time" />
+            <AgendaItem no="04" title="BCA Security Layer" desc="Proteksi Kredensial & Sinkronisasi BCA" />
+            <AgendaItem no="05" title="Notifikasi Email" desc="Optimasi Biaya & Pengiriman Pesan" />
+            <AgendaItem no="06" title="Business Impact" desc="Efisiensi & Efek Bisnis Jangka Panjang" />
+            <AgendaItem no="07" title="Implementation Timeline" desc="Tahapan Milestone & Implementasi" />
+            <AgendaItem no="08" title="Financial Roadmap" desc="Analisis Biaya & Skalabilitas Sistem" />
+            <AgendaItem no="09" title="Closing & Next Steps" desc="Kesimpulan & Rencana Aksi Strategis" />
+            
         </div>
 
       </div>
 
-      {/* Bottom Bar - Konsisten dengan Slide 1 */}
-      <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-[#0a0a0a]/90 backdrop-blur-md border-t border-white/5 flex items-center justify-between px-16 z-20">
-        
-        {/* Progress Line */}
-        <div className="absolute top-0 left-0 h-[2px] bg-red-600 shadow-[0_0_10px_#E31E24] transition-all duration-1000" style={{ width: '25%' }}></div>
+      {/* Bottom Bar - Disesuaikan agar Progress Line tidak terlihat putus */}
+      <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-[#080808] border-t border-white/5 flex items-center justify-between px-16 z-20">
+        <div className="absolute top-[-1px] left-0 h-[2px] bg-red-600 shadow-[0_0_15px_#E31E24]" style={{ width: '25%' }}></div>
 
-        <div className="flex gap-10">
-          <div className="flex gap-3 items-center">
-            <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
-               <i className="fas fa-user text-red-500 text-xs"></i>
-            </div>
-            <span className="text-[11px] font-bold tracking-widest text-gray-400 uppercase">IT Development Team</span>
+        <div className="flex gap-8 text-gray-500 text-left">
+          <div className="flex gap-2 items-center">
+             <i className="fas fa-user-tie text-red-500 text-[10px]"></i>
+             <span className="text-[9px] font-bold tracking-widest uppercase">IT Development Team</span>
           </div>
-          <div className="flex gap-3 items-center">
-            <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
-               <i className="fas fa-calendar text-red-500 text-xs"></i>
-            </div>
-            <span className="text-[11px] font-bold tracking-widest text-gray-400">APRIL 2026</span>
+          <div className="flex gap-2 items-center">
+             <i className="fas fa-calendar-alt text-red-500 text-[10px]"></i>
+             <span className="text-[9px] font-bold tracking-widest uppercase font-sans">APRIL 2026</span>
           </div>
         </div>
 
-        <div className="flex items-center gap-6">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_#22c55e]"></div>
-            <span className="text-[10px] font-bold text-gray-400 tracking-wider">READY TO START</span>
-          </div>
-          <div className="bg-white/5 border border-white/10 px-4 py-1.5 rounded-md text-sm font-black italic">
-            <span className="text-red-500">2</span> <span className="text-white/30 mx-1">/</span> 8
-          </div>
+        <div className="bg-white/5 border border-white/10 px-4 py-1.5 rounded-lg text-sm font-black italic">
+          <span className="text-red-500 text-lg">2</span> <span className="text-white/20 mx-1">/</span> <span className="text-white/60">9</span>
         </div>
       </div>
     </div>
   );
 }
 
-/* Sidebar Card - Premium Design */
 function SidebarCard({ icon, title, text }) {
   return (
-    <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-6 relative overflow-hidden group">
-      <div className="absolute top-0 left-0 w-1 h-full bg-red-600"></div>
-      <div className="flex items-center gap-3 font-black text-xs tracking-[0.2em] uppercase mb-4 text-white/90">
-        <i className={`fas ${icon} text-red-500 text-base`}></i>
+    <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 relative overflow-hidden text-left">
+      <div className="absolute top-0 left-0 w-[2px] h-full bg-red-600"></div>
+      <div className="flex items-center gap-3 font-black text-[9px] tracking-[0.2em] uppercase mb-3 text-white/70">
+        <i className={`fas ${icon} text-red-500 text-xs`}></i>
         {title}
       </div>
-      <div className="text-gray-400 text-[13px] leading-relaxed text-left">
+      <div className="text-gray-400 text-[11px] leading-relaxed font-medium tracking-tight uppercase">
         {text}
       </div>
     </div>
   );
 }
 
-/* Agenda Item - Compact & Professional */
-function AgendaItem({ no, title, desc, icon }) {
+function AgendaItem({ no, title, desc }) {
   return (
-    <div className="group flex items-center gap-4 bg-white/[0.03] hover:bg-white/[0.08] border border-white/5 p-4 rounded-xl transition-all duration-300 hover:translate-y-[-2px] hover:border-red-500/30">
-      <div className="relative">
-        <div className="w-10 h-10 rounded-lg bg-red-600/10 flex items-center justify-center border border-red-600/20 group-hover:bg-red-600 transition-all duration-300">
-           <span className="text-xs font-black text-red-500 group-hover:text-white">{no}</span>
-        </div>
+    <div className="group flex items-center gap-4 bg-transparent hover:bg-white/[0.03] p-1.5 px-4 rounded-xl transition-all border-b border-white/[0.02] last:border-0">
+      <div className="text-lg font-black italic text-red-500 group-hover:text-white w-6 text-left">{no}</div>
+      <div className="flex-1 text-left leading-none">
+        <div className="text-[12px] font-extrabold text-white group-hover:text-red-400 transition-colors tracking-tight uppercase">{title}</div>
+        <div className="text-[8px] font-bold text-gray-500 uppercase tracking-widest mt-0.5">{desc}</div>
       </div>
-      
-      <div className="flex-1 text-left">
-        <div className="text-[13px] font-bold text-white tracking-wide group-hover:text-red-400 transition-colors">
-          {title}
-        </div>
-        <div className="text-[10px] font-medium text-gray-500 uppercase tracking-wider mt-0.5">
-          {desc}
-        </div>
-      </div>
-
-      <div className="text-white/20 group-hover:text-red-500/50 transition-colors pr-2">
-        <i className={`fas ${icon} text-lg`}></i>
+      {/* Panah diperkecil agar tidak terdorong keluar frame */}
+      <div className="flex items-center justify-center w-6 h-6 bg-red-600/10 border border-red-500/20 rounded-lg group-hover:bg-red-600 transition-all">
+         <i className="fas fa-arrow-right text-[10px] text-red-500 group-hover:text-white"></i>
       </div>
     </div>
   );
