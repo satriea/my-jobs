@@ -131,7 +131,7 @@ export default function Slide4() {
 
       {/* Bottom Bar - Konsisten */}
       <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-[#0a0a0a]/90 backdrop-blur-md border-t border-white/5 flex items-center justify-between px-16 z-20">
-        <div className="absolute top-0 left-0 h-[2px] bg-red-600 shadow-[0_0_10px_#E31E24]" style={{ width: '50%' }}></div>
+        <div className="absolute top-0 left-0 h-[2px] bg-red-600 shadow-[0_0_10px_#E31E24]" style={{ width: '44.4%' }}></div>
         <div className="flex gap-10 text-gray-400">
           <div className="flex items-center gap-2">
             <i className="fas fa-calendar-alt text-red-500 text-xs"></i>

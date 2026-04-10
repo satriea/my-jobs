@@ -1,6 +1,9 @@
-import React from "react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Slide7() {
+const [showEmailModal, setShowEmailModal] = useState(false);
+
   return (
     <div className="w-[1280px] h-[720px] relative overflow-hidden bg-[#0f0f0f] text-white font-sans selection:bg-red-500/30">
       
@@ -81,19 +84,30 @@ export default function Slide7() {
           </div>
 
           {/* Strategy Icons */}
-          <div className="grid grid-cols-3 gap-3 mb-8">
-            {[
-              { icon: "fa-envelope", title: "Email Notif", desc: "Membership & Claim" },
-              { icon: "fa-bell", title: "WhatsApp", desc: "OTP & Verifikasi" },
-              { icon: "fa-server", title: "Hosting", desc: "Sinar Mas Selluler" },
-            ].map((item, index) => (
-              <div key={index} className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col items-center text-center group hover:bg-red-600 transition-all duration-300">
-                <i className={`fas ${item.icon} text-red-500 group-hover:text-white mb-3 text-lg`}></i>
-                <div className="text-[10px] font-black uppercase text-white mb-1 leading-none">{item.title}</div>
-                <div className="text-[8px] font-bold text-gray-500 group-hover:text-white/70 uppercase tracking-tighter leading-none">{item.desc}</div>
+              <div className="grid grid-cols-3 gap-3 mb-8">
+                {[
+                  { icon: "fa-envelope", title: "Email Notif", desc: "Membership & Claim", clickable: true },
+                  { icon: "fa-bell", title: "WhatsApp", desc: "OTP & Verifikasi" },
+                  { icon: "fa-server", title: "Hosting", desc: "Sinar Mas Selluler" },
+                ].map((item, index) => (
+                  <div 
+                    key={index} 
+                    onClick={() => item.clickable && setShowEmailModal(true)}
+                    className={`bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col items-center text-center group transition-all duration-300 ${item.clickable ? 'cursor-pointer hover:bg-red-600 shadow-lg hover:shadow-red-900/20' : 'hover:bg-white/10'}`}
+                  >
+                    <i className={`fas ${item.icon} text-red-500 group-hover:text-white mb-3 text-lg`}></i>
+                    <div className="text-[10px] font-black uppercase text-white mb-1 leading-none">
+                      {item.title}
+                    </div>
+                    <div className="text-[8px] font-bold text-gray-500 group-hover:text-white/70 uppercase tracking-tighter leading-none">
+                      {item.desc}
+                    </div>
+                    {item.clickable && (
+                      <div className="mt-2 text-[7px] text-red-500 group-hover:text-white font-black animate-pulse uppercase">Click to Preview</div>
+                    )}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
           {/* Benefits Checklist */}
           <div className="space-y-3 mt-auto">
@@ -115,7 +129,7 @@ export default function Slide7() {
       {/* BOTTOM BAR - KONSISTEN */}
       <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-[#0a0a0a]/90 backdrop-blur-md border-t border-white/5 flex items-center justify-between px-16 z-20">
         {/* Progress Bar - 87.5% (Slide 7 dari 8) */}
-        <div className="absolute top-0 left-0 h-[2px] bg-red-600 shadow-[0_0_15px_#E31E24]" style={{ width: '87.5%' }}></div>
+        <div className="absolute top-0 left-0 h-[2px] bg-red-600 shadow-[0_0_15px_#E31E24]" style={{ width: '77.7%' }}></div>
         
         <div className="flex gap-10 text-gray-400">
           <div className="flex items-center gap-2">
@@ -130,6 +144,80 @@ export default function Slide7() {
 
         <div className="bg-red-600 px-6 py-1.5 rounded-md font-black italic shadow-lg shadow-red-900/20 text-sm uppercase tracking-tighter">V3.0</div>
       </div>
+
+      {/* MODAL ANIMASI PREMIUM */}
+          <AnimatePresence>
+            {showEmailModal && (
+              <div className="fixed inset-0 z-[1000] flex items-center justify-center p-6 lg:p-12">
+                {/* Backdrop dengan Blur mendalam */}
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={() => setShowEmailModal(false)}
+                  className="absolute inset-0 bg-black/80 backdrop-blur-xl"
+                />
+
+                {/* Konten Modal */}
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0, y: 20, rotateX: 15 }}
+                  animate={{ scale: 1, opacity: 1, y: 0, rotateX: 0 }}
+                  exit={{ scale: 0.8, opacity: 0, y: 20, rotateX: -15 }}
+                  transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                  className="relative bg-[#0f0f0f] border border-white/10 rounded-[2rem] shadow-[0_0_50px_rgba(0,0,0,0.5)] w-full max-w-2xl overflow-hidden"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* Glow Decorative */}
+                  <div className="absolute -top-24 -right-24 w-48 h-48 bg-red-600/20 blur-[80px] rounded-full pointer-events-none"></div>
+                  
+                  {/* Header Modal */}
+                  <div className="flex items-center justify-between px-8 py-5 border-b border-white/5 bg-white/[0.02]">
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(227,30,36,0.5)]">
+                        <i className="fas fa-envelope-open-text text-white"></i>
+                      </div>
+                      <div className="text-left leading-none">
+                        <h3 className="text-white font-black uppercase tracking-tighter text-lg italic">Email Preview</h3>
+                        <p className="text-[9px] text-gray-500 font-bold uppercase tracking-[0.2em] mt-1">Sinar Mas Selluler Architecture V3.0</p>
+                      </div>
+                    </div>
+                    <button 
+                      onClick={() => setShowEmailModal(false)}
+                      className="group w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-red-600 transition-all duration-300 active:scale-90"
+                    >
+                      <i className="fas fa-times text-white group-hover:rotate-90 transition-transform"></i>
+                    </button>
+                  </div>
+
+                  {/* Area Gambar dengan Batasan Ukuran agar Tidak Terlalu Besar */}
+                  <div className="p-8 bg-black/40 flex justify-center">
+                    <div className="rounded-2xl overflow-hidden border border-white/10 shadow-inner max-h-[80vh] max-w-[300px] overflow-y-auto custom-scrollbar bg-white">
+                      <img 
+                        src="/emails.jpeg" 
+                        alt="Email Template V3" 
+                        className="w-full h-auto block object-top"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Footer Modal */}
+                  <div className="px-8 py-4 bg-white/[0.02] border-t border-white/5 flex justify-between items-center">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_#22c55e]"></div>
+                      <span className="text-[9px] font-black text-white/40 uppercase tracking-widest">Email Template</span>
+                    </div>
+                    <button 
+                      onClick={() => setShowEmailModal(false)}
+                      className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white font-black italic rounded-xl text-xs uppercase tracking-tighter transition-all active:scale-95 shadow-lg shadow-red-900/20"
+                    >
+                      Close Preview
+                    </button>
+                  </div>
+                </motion.div>
+              </div>
+            )}
+          </AnimatePresence>
+
     </div>
   );
 }

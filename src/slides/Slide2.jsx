@@ -78,7 +78,7 @@ export default function Slide2() {
 
       {/* Bottom Bar - Disesuaikan agar Progress Line tidak terlihat putus */}
       <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-[#080808] border-t border-white/5 flex items-center justify-between px-16 z-20">
-        <div className="absolute top-[-1px] left-0 h-[2px] bg-red-600 shadow-[0_0_15px_#E31E24]" style={{ width: '25%' }}></div>
+        <div className="absolute top-[-1px] left-0 h-[2px] bg-red-600 shadow-[0_0_15px_#E31E24]" style={{ width: '22.2%' }}></div>
 
         <div className="flex gap-10 text-gray-400">
           <div className="flex items-center gap-2">

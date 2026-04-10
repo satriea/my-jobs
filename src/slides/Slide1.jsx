@@ -98,6 +98,7 @@ export default function Slide1() {
 
       {/* Bottom Bar - Fixed Height: 70px */}
       <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-[#0a0a0a]/90 backdrop-blur-md border-t border-white/5 flex items-center justify-between px-16 z-20">
+        <div className="absolute top-[-1px] left-0 h-[2px] bg-red-600 shadow-[0_0_15px_#E31E24]" style={{ width: '11.1%' }}></div>
         <div className="flex gap-10">
           <div className="flex gap-3 items-center">
             <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center"><i className="fas fa-calendar-alt text-red-500 text-xs"></i></div>
