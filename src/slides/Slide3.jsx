@@ -1,167 +1,152 @@
-export default function Slide3() {
-  return (
-    <div className="w-[1280px] h-[720px] relative overflow-hidden bg-[#0f0f0f] text-white font-sans selection:bg-red-500/30">
-      
-      {/* Background Decorative Elements */}
-      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-red-900/10 rounded-full blur-[100px]"></div>
+import React from "react";
 
-      {/* Header - KONSISTEN dengan Slide 1 & 2 */}
+export default function Slide6CostComparison() {
+  return (
+    <div className="w-[1280px] h-[720px] relative overflow-hidden bg-white text-slate-900 font-sans selection:bg-red-500/10">
+      
+      {/* Background Decorative */}
+      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-red-500/[0.03] rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-slate-100 rounded-full blur-[100px]"></div>
+
+      {/* Header - KONSISTEN LIGHT MODE */}
       <div className="absolute top-0 left-0 right-0 h-[90px] z-30 flex items-center px-12">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#E31E24] to-[#8b1216] opacity-95 shadow-xl"></div>
-        <div className="relative flex items-center gap-5">
-          <div className="bg-white/20 p-2.5 rounded-xl backdrop-blur-md border border-white/30">
-             <i className="fas fa-exchange-alt text-2xl text-white"></i>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#E31E24] to-[#8b1216] shadow-md"></div>
+        <div className="relative flex items-center gap-5 text-left">
+          <div className="bg-white/20 p-2.5 rounded-xl backdrop-blur-md border border-white/30 text-white">
+             <i className="fas fa-calculator text-2xl"></i>
           </div>
-          <div className="text-left">
-            <div className="text-2xl font-black tracking-tighter italic uppercase drop-shadow-md">PERBANDINGAN SISTEM</div>
-            <div className="text-[10px] uppercase tracking-[0.2em] text-white/70 font-semibold">Membership V2 vs V3 Upgrade</div>
+          <div>
+            <div className="text-2xl font-black tracking-tighter italic uppercase drop-shadow-md leading-none mb-1 text-white">OPTIMALISASI BIAYA META API</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-white/80 font-bold">Analisis Penghematan & Efisiensi Pengiriman Pesan</div>
           </div>
         </div>
-        <div className="ml-auto relative">
-          <div className="bg-black/20 backdrop-blur-md border border-white/10 px-4 py-2 rounded-lg text-xs font-medium tracking-widest uppercase">
-            Integrasi Proteksi BCA & Form Claim
-          </div>
+        <div className="ml-auto bg-black/10 backdrop-blur-md px-4 py-2 rounded-lg border border-white/20 text-[10px] font-bold tracking-widest uppercase text-white">
+          Efficiency Roadmap V3.0
         </div>
       </div>
 
-      {/* Main Content Area - Locked Height 560px */}
-      <div className="absolute top-[90px] left-0 right-0 h-[560px] flex flex-col justify-center px-16 z-10">
-        
-        {/* Comparison Row - Height Restricted to 380px */}
-        <div className="flex gap-8 items-stretch h-[380px]">
-          
-          {/* LEFT - V2 Card */}
-          <ComparisonCard
-            icon="fa-history"
-            title="Membership V2 (Sebelumnya)"
-            subtitle="Sistem Basic - Sebelum Upgrade"
-            status="Status: Sistem Lama"
-            statusColor="red"
-            features={[
-              "Sistem membership masih basic - Belum terintegrasi",
-              "Belum ada data gender, tempat lahir, No. KTP",
-              "Notifikasi hanya via WhatsApp saja",
-              "Detail info belum menampilkan Member ID",
-              "Claim proteksi belum ada - Form belum terstruktur",
-              "Monitoring terbatas - Tracking belum real-time",
-              "Integrasi data claim ke bank belum optimal",
-              "Tracking claim belum real-time"
-            ]}
-            check={false}
-          />
+      {/* Main Content Area */}
+      <div className="absolute top-[90px] left-0 right-0 h-[560px] flex px-16 gap-10 items-center z-10 text-left py-10">
 
-          {/* Versus Divider - Bold & Glowing */}
-          <div className="flex flex-col items-center justify-center">
-            {/* Garis Atas */}
-            <div className="h-full w-[2px] bg-gradient-to-b from-transparent via-white/20 to-red-500/40"></div>
+      {/* LEFT PANEL: RINCIAN BIAYA (8.000 MEMBER) */}
+      <div className="w-[45%] flex flex-col h-full justify-center">
+        <div className="bg-slate-50 border border-slate-200 rounded-[2.5rem] p-8 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 right-0 bg-red-600 text-white text-[9px] font-black px-4 py-1 rounded-bl-xl uppercase tracking-widest">
+            Analisis Unit Biaya
+          </div>
+          
+          <div className="flex items-center gap-4 mb-8 border-b border-slate-200 pb-5">
+            <div className="w-12 h-12 bg-red-600 rounded-2xl flex items-center justify-center text-white shadow-lg">
+              <i className="fab fa-whatsapp text-2xl"></i>
+            </div>
+            <div className="text-left">
+              <h3 className="font-black text-xl text-slate-900 leading-none mb-1 text-left">Rincian Biaya V3</h3>
+              <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest text-left">Base Target: 8.000 Member / Bulan</p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <DetailedCostItem 
+              title="Template Marketing" 
+              unitPrice="580" 
+              quantity="8.000" 
+              total="4.640.000" 
+              desc="Broadcast, Promo & Re-engagement" 
+            />
+            <DetailedCostItem 
+              title="Template Utilitas" 
+              unitPrice="350" 
+              quantity="8.000" 
+              total="2.800.000" 
+              desc="Konfirmasi Transaksi & Notifikasi" 
+            />
             
-            {/* Lingkaran VS */}
-            <div className="relative my-4 group">
-              {/* Efek Glow di belakang lingkaran */}
-              <div className="absolute inset-0 bg-red-600 blur-lg opacity-30 group-hover:opacity-60 transition-opacity"></div>
-              
-              <div className="relative w-14 h-14 rounded-full border-2 border-red-500/50 flex items-center justify-center bg-[#0a0a0a] shadow-[0_0_20px_rgba(227,30,36,0.2)]">
-                <span className="italic font-black text-white text-lg tracking-tighter drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
-                  VS
-                </span>
+            {/* BAGIAN YANG DIUBAH: TOTAL MENJADI SELISIH */}
+            <div className="pt-4 border-t-2 border-dashed border-slate-200 flex justify-between items-end">
+              <div className="text-left leading-none">
+                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1 text-left">
+                  Selisih Biaya Kategori
+                </div>
+                <div className="text-3xl font-black text-red-600 tracking-tighter italic">
+                  Rp 1.840.000
+                </div>
+              </div>
+              <div className="text-right flex flex-col items-end">
+                <div className="text-[9px] font-black text-slate-500 uppercase tracking-tighter mb-1">
+                  Gap Harga Per 8rb Pesan
+                </div>
+                <div className="text-[10px] font-black text-red-600 bg-red-50 px-2 py-1 rounded uppercase tracking-tighter italic">
+                  Marketing {'>'} Utilitas
+                </div>
               </div>
             </div>
-            
-            {/* Garis Bawah */}
-            <div className="h-full w-[2px] bg-gradient-to-t from-transparent via-white/20 to-red-500/40"></div>
           </div>
-
-          {/* RIGHT - V3 Card */}
-          <ComparisonCard
-            icon="fa-check-circle"
-            title="Membership V3 (Saat Ini)"
-            subtitle="Sistem Terintegrasi - Setelah Upgrade"
-            status="Status: Sistem Baru"
-            statusColor="green"
-            features={[
-              "Sistem membership lebih terintegrasi - Data lengkap",
-              "Data pendukung claim lengkap (Identitas lengkap)",
-              "Form input claim tersedia (CRM Kepala Toko)",
-              "Notifikasi email real-time ke customer",
-              "Monitoring claim real-time - Dashboard jelas",
-              "Pengambilan data lebih cepat & terkontrol",
-              "Data claim tersimpan di database ",
-              "Notifikasi sukses maupun error menampilkan data member ID customer"
-            ]}
-            check={true}
-            highlight={true}
-          />
-        </div>
-
-        {/* Benefits Area - Fixed spacing from bottom bar */}
-        <div className="grid grid-cols-3 gap-6 mt-8">
-          <Benefit icon="fa-hand-holding-heart" title="Mempermudah Proses Claim" desc="Proses klaim lebih cepat" />
-          <Benefit icon="fa-shield-alt" title="Mengurangi Human Error" desc="Data lebih akurat" />
-          <Benefit icon="fa-chart-line" title="Monitoring Transparan" desc="Real-time tracking" />
         </div>
       </div>
 
-      {/* Bottom Bar - Fixed Height 70px */}
-      <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-[#0a0a0a]/90 backdrop-blur-md border-t border-white/5 flex items-center justify-between px-16 z-20">
-        <div className="absolute top-0 left-0 h-[2px] bg-red-600 shadow-[0_0_10px_#E31E24]" style={{ width: '33.3%' }}></div>
-        <div className="flex gap-10 text-gray-400">
-          <div className="flex items-center gap-2">
-            <i className="fas fa-calendar-alt text-red-500 text-xs"></i>
-            <span className="text-[11px] font-bold tracking-widest uppercase font-sans">April 2026</span>
+        {/* RIGHT PANEL: STRATEGI PENGHEMATAN (FILTER SOLUTION) */}
+        <div className="flex-1 h-full flex flex-col justify-center space-y-6">
+          <div className="text-left space-y-2">
+            <h2 className="text-3xl font-black italic tracking-tighter text-slate-900 uppercase">Solusi Efisiensi Biaya</h2>
+            <p className="text-slate-500 font-medium text-sm">Bagaimana cara menekan biaya agar tidak membengkak setiap bulan?</p>
           </div>
-          <div className="flex items-center gap-2">
-            <i className="fas fa-mobile text-red-500 text-xs"></i>
-            <span className="text-[11px] font-bold tracking-widest uppercase font-sans">Sinar Mas Selluler</span>
+
+          <div className="grid grid-cols-1 gap-4">
+            <SolutionCard 
+              icon="fa-filter" 
+              title="Filter Member Aktif (Purchasing)" 
+              desc="Sistem hanya mengirim pesan WhatsApp otomatis kepada member yang melakukan pembelian (Invoice Generate). Member yang hanya mendaftar/idle hanya akan menerima Email (Gratis)."
+            />
+            <SolutionCard 
+              icon="fa-layer-group" 
+              title="Segmentasi Tiering" 
+              desc="Hanya member Tier 'Platinum' atau 'Gold' yang mendapatkan notifikasi WhatsApp. Member Regular diarahkan ke aplikasi/email untuk efisiensi budget."
+            />
           </div>
         </div>
-        <div className="bg-red-600 px-5 py-1 rounded text-sm font-black italic shadow-lg shadow-red-900/20 uppercase tracking-tighter">V3.0</div>
+
+      </div>
+
+      {/* Bottom Bar - KONSISTEN LIGHT MODE */}
+      <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-slate-50/80 backdrop-blur-md border-t border-slate-200 flex items-center justify-between px-16 z-20 text-left">
+        <div className="absolute top-[-1px] left-0 h-[3px] bg-red-600 shadow-[0_0_15px_rgba(227,30,36,0.3)]" style={{ width: '88.8%' }}></div>
+        <div className="flex gap-10 text-slate-500">
+           <span className="text-[11px] font-black tracking-widest uppercase">April 2026</span>
+           <span className="text-[11px] font-black tracking-widest uppercase">IT Development Team</span>
+        </div>
+        <div className="bg-slate-900 px-7 py-2 rounded-lg font-black italic shadow-md text-white text-sm tracking-tighter uppercase leading-none">V3.0</div>
       </div>
     </div>
   );
 }
 
-/* Updated Comparison Card - More Compact */
-function ComparisonCard({ icon, title, subtitle, features, status, statusColor, check, highlight }) {
+function DetailedCostItem({ title, unitPrice, quantity, total, desc }) {
   return (
-    <div className={`flex-1 rounded-2xl p-5 border transition-all ${highlight ? 'bg-white/[0.05] border-red-500/30' : 'bg-white/[0.02] border-white/10'}`}>
-      <div className="flex items-center gap-3 mb-4 border-b border-white/5 pb-3">
-        <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-lg ${statusColor === 'green' ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}`}>
-          <i className={`fas ${icon}`}></i>
-        </div>
-        <div className="text-left">
-          <div className="font-bold text-base leading-none mb-1 uppercase tracking-tight">{title}</div>
-          <div className="text-[9px] font-bold text-gray-500 uppercase tracking-widest">{subtitle}</div>
-        </div>
+    <div className="bg-white p-4 rounded-2xl border border-slate-200 flex justify-between items-center group hover:border-red-500 transition-all">
+      <div className="text-left leading-none">
+        <div className="text-[12px] font-black text-slate-800 uppercase mb-1">{title}</div>
+        <div className="text-[9px] text-slate-400 font-bold uppercase tracking-tight">{desc}</div>
       </div>
-
-      <div className="space-y-2.5">
-        {features.map((item, index) => (
-          <div key={index} className="flex gap-3 items-start">
-            <i className={`fas ${check ? "fa-check-circle text-green-500" : "fa-times-circle text-red-500/40"} text-[10px] mt-1`}></i>
-            <p className="text-[12px] text-gray-400 text-left leading-tight">{item}</p>
-          </div>
-        ))}
-      </div>
-
-      <div className={`mt-5 inline-flex items-center gap-2 px-3 py-1 rounded-full text-[9px] font-bold tracking-wider border ${statusColor === 'green' ? 'bg-green-500/10 border-green-500/30 text-green-400' : 'bg-red-500/10 border-red-500/30 text-red-400'}`}>
-        <span className={`w-1.5 h-1.5 rounded-full ${statusColor === 'green' ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`}></span>
-        {status.toUpperCase()}
+      <div className="text-right leading-none">
+        <div className="text-[10px] text-slate-400 font-bold mb-1">{quantity} x Rp {unitPrice}</div>
+        <div className="text-lg font-black text-red-600 tracking-tighter italic">Rp {total}</div>
       </div>
     </div>
   );
 }
 
-/* Updated Benefit - More Compact */
-function Benefit({ icon, title, desc }) {
+function SolutionCard({ icon, title, desc, saving }) {
   return (
-    <div className="bg-white/[0.03] border border-white/5 rounded-xl p-3.5 flex items-center gap-4 hover:border-red-500/30 transition-all">
-      <div className="w-9 h-9 rounded-lg bg-red-600/10 flex items-center justify-center text-red-500 border border-red-600/20 shadow-lg">
-        <i className={`fas ${icon} text-sm`}></i>
+    <div className="bg-white border border-slate-200 p-5 rounded-2xl flex gap-5 items-start hover:shadow-lg transition-all text-left">
+      <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center text-white shrink-0 shadow-[0_5px_15px_rgba(34,197,94,0.3)]">
+        <i className={`fas ${icon} text-lg`}></i>
       </div>
-      <div className="text-left leading-tight">
-        <h4 className="text-[12px] font-bold text-white uppercase mb-0.5 tracking-wide">{title}</h4>
-        <p className="text-[10px] text-gray-500 uppercase tracking-wider font-medium">{desc}</p>
+      <div className="space-y-1">
+        <div className="flex items-center gap-3">
+          <h4 className="font-black text-slate-900 uppercase text-xs tracking-tight">{title}</h4>
+          <span className="bg-green-100 text-green-700 text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-tighter">{saving}</span>
+        </div>
+        <p className="text-[11px] text-slate-500 font-medium leading-relaxed uppercase">{desc}</p>
       </div>
     </div>
   );

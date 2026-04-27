@@ -7,6 +7,7 @@ import Slide6 from "../slides/Slide6";
 import Slide7 from "../slides/Slide7";
 import Slide8 from "../slides/Slide8";
 import Slide9 from "../slides/Slide9";
+import Slide10 from "../slides/Slide10";
 
 export const slides = [
   Slide1,
@@ -18,4 +19,5 @@ export const slides = [
   Slide7,
   Slide8,
   Slide9,
+  Slide10,
 ];

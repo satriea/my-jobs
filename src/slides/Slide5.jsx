@@ -1,149 +1,144 @@
 import React from "react";
 
-export default function Slide5() {
-  return (
-    <div className="w-[1280px] h-[720px] relative overflow-hidden bg-[#0f0f0f] text-white font-sans selection:bg-red-500/30">
-      
-      {/* Background Decorative Glows */}
-      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-red-600/5 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-red-900/10 rounded-full blur-[100px]"></div>
+export default function SlideExistingEcosystem() {
+  const platforms = [
+    { name: "Membership System", url: "membership.simassell.id", icon: "fa-users-cog", status: "High Traffic" },
+    { name: "Corporate CRM", url: "simassell.id/dashboard", icon: "fa-chart-pie", status: "Critical Data" },
+    { name: "I-Absen", url: "i-absen.simassell.id", icon: "fa-clock", status: "Daily Active" },
+    { name: "Web Karir", url: "info-karir.sinarmasselluler.com", icon: "fa-briefcase", status: "Active" },
+    { name: "My-Principle", url: "my-principle.sinarmasselluler.com", icon: "fa-handshake", status: "External Sync" },
+    { name: "Official Ecommerce", url: "sinarmasselluler.com", icon: "fa-shopping-cart", status: "In Development", highlight: true },
+  ];
 
-      {/* Header - Konsisten dengan Slide sebelumnya */}
-      <div className="absolute top-0 left-0 right-0 h-[90px] z-30 flex items-center px-12 text-left">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#E31E24] to-[#8b1216] opacity-95 shadow-xl"></div>
-        <div className="relative flex items-center gap-5">
-          <div className="bg-white/20 p-2.5 rounded-xl backdrop-blur-md border border-white/30 text-white">
-             <i className="fas fa-server text-2xl"></i>
+  return (
+    <div className="w-[1280px] h-[720px] relative overflow-hidden bg-white text-slate-900 font-sans selection:bg-red-500/10">
+      
+      {/* Background Tech Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'80\' height=\'80\' viewBox=\'0 0 100 100\'%3E%3Cpath d=\'M10 10L90 90M90 10L10 90\' stroke=\'%23000\' stroke-width=\'0.3\'/%3E%3C/svg%3E")' }}></div>
+
+      {/* Header - 80px */}
+      <div className="absolute top-0 left-0 right-0 h-[80px] z-30 flex items-center px-12">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#E31E24] to-[#8b1216] shadow-md"></div>
+        <div className="relative flex items-center gap-4 text-left">
+          <div className="bg-white/20 p-2 rounded-xl backdrop-blur-md border border-white/30 text-white shadow-inner">
+             <i className="fas fa-network-wired text-xl"></i>
           </div>
-          <div>
-            <div className="text-2xl font-black tracking-tighter italic uppercase drop-shadow-md leading-none mb-1">WEBHOOK WHATSAPP</div>
-            <div className="text-[10px] uppercase tracking-[0.2em] text-white/70 font-semibold">Monitoring Chat Customer Real-time</div>
+          <div className="text-left leading-none">
+            <h1 className="text-xl font-black tracking-tighter italic uppercase text-white">EKOSISTEM DIGITAL EXISTING</h1>
+            <div className="text-[9px] uppercase tracking-[0.2em] text-white/70 font-bold mt-1">Infrastructure Load Analysis 2026</div>
           </div>
         </div>
-        <div className="ml-auto relative">
-          <div className="bg-black/20 backdrop-blur-md border border-white/10 px-4 py-2 rounded-lg text-[10px] font-bold tracking-widest uppercase text-white/90">
-            Direct Meta Synchronization
+        
+        {/* DOMAIN INFO TAGS */}
+        <div className="ml-auto flex gap-2">
+          <div className="bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-left">
+            <div className="text-[9px] font-black text-red-300 uppercase leading-none mb-1">Main Domain</div>
+            <div className="text-[11px] font-bold text-white leading-none">sinarmasselluler.com</div>
+          </div>
+          <div className="bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-left">
+            <div className="text-[9px] font-black text-amber-300 uppercase leading-none mb-1">Addon Domain</div>
+            <div className="text-[11px] font-bold text-white leading-none">simassell.id</div>
+          </div>
+          <div className="bg-green-500/20 backdrop-blur-md px-3 py-1.5 rounded-lg border border-green-500/30 flex items-center gap-2">
+            <i className="fab fa-node-js text-green-600 font-bold text-xs"></i>
+            <span className="text-[9px] font-black text-white uppercase tracking-widest">Node.js</span>
           </div>
         </div>
       </div>
 
-      {/* Main Content Area - Locked Height dengan Padding Bawah yang Lega */}
-      <div className="absolute top-[90px] left-0 right-0 h-[560px] flex flex-col px-16 z-10 pt-8 pb-12">
+      {/* Main Content Area */}
+      <div className="absolute top-[80px] left-0 right-0 h-[570px] flex flex-col px-16 z-10 py-6 text-left">
         
-        {/* UPPER SECTION: FLOW - Dengan Margin Bottom (mb-10) untuk memisahkan card */}
-        <div className="bg-white/[0.03] border border-white/5 rounded-3xl p-6 shadow-inner relative overflow-hidden h-[250px] flex flex-col justify-center mb-10">
-          <div className="flex items-center gap-3 mb-8 border-b border-white/5 pb-3">
-            <div className="w-8 h-8 rounded-lg bg-red-600/20 flex items-center justify-center text-red-500 text-sm border border-red-600/20">
-              <i className="fas fa-project-diagram"></i>
+        {/* Intro Section */}
+        <div className="flex justify-between items-start mb-6">
+            <div className="max-w-2xl text-left">
+                <h2 className="text-3xl font-black italic tracking-tighter text-slate-900 uppercase leading-none mb-2">
+                    INFRASTRUKTUR <span className="text-red-600">GUARDIAN</span>
+                </h2>
+                <p className="text-slate-500 font-bold text-sm leading-snug border-l-4 border-red-600 pl-4">
+                    Pusat kendali 6 platform utama Sinar Mas Selluler. Backend <span className="text-slate-900 font-black">Node.js</span> menjamin stabilitas koneksi <span className="text-green-600 font-black italic underline">24 Jam Tanpa Putus</span>.
+                </p>
+            </div>
+            
+            <div className="bg-slate-50 border border-slate-200 px-4 py-2 rounded-2xl flex items-center gap-3 shadow-sm">
+                <div className="w-6 h-6 rounded-full border-2 border-green-500 border-t-transparent animate-spin"></div>
+                <div className="text-left leading-tight">
+                    <div className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Runtime Status</div>
+                    <div className="text-[10px] font-black text-slate-800 tracking-tight text-nowrap">SERVER ALWAYS ONLINE</div>
+                </div>
+            </div>
+        </div>
+
+        {/* Platform Grid */}
+        <div className="grid grid-cols-3 gap-4 mb-4 text-left">
+            {platforms.map((item, index) => (
+                <div key={index} className={`group bg-white border p-4 rounded-[1.5rem] flex flex-col gap-3 transition-all duration-300 border-b-4 ${item.highlight ? 'border-amber-400 bg-amber-50/30' : 'border-slate-100 hover:border-red-600 hover:shadow-lg'}`}>
+                    <div className="flex justify-between items-center">
+                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shadow-inner transition-all ${item.highlight ? 'bg-amber-100 text-amber-600' : 'bg-slate-50 text-red-600 group-hover:bg-red-600 group-hover:text-white'}`}>
+                            <i className={`fas ${item.icon} text-lg`}></i>
+                        </div>
+                        <span className={`text-[7px] font-black px-2 py-0.5 rounded-full uppercase tracking-widest ${item.highlight ? 'bg-amber-200 text-amber-800 animate-pulse' : 'bg-slate-100 text-slate-500'}`}>
+                            {item.status}
+                        </span>
+                    </div>
+                    
+                    <div className="text-left">
+                        <div className="text-[13px] font-black uppercase text-slate-800 tracking-tight mb-1">{item.name}</div>
+                        <div className={`flex items-center gap-2 font-bold text-[11px] p-1.5 px-2 rounded-lg border ${item.highlight ? 'bg-white border-amber-200 text-amber-700' : 'bg-red-50/50 border-red-100/50 text-red-600/60'}`}>
+                            <i className="fas fa-link text-[7px]"></i>
+                            <span className="truncate uppercase">{item.url}</span>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        {/* FUTURE ROADMAP TOOLTIP */}
+        <div className="bg-amber-100/50 border border-amber-200 rounded-2xl p-3 mb-4 flex items-center gap-4 text-left">
+            <div className="bg-amber-500 text-white w-8 h-8 rounded-lg flex items-center justify-center shadow-md shrink-0">
+                <i className="fas fa-chart-line text-xs"></i>
             </div>
             <div className="text-left">
-              <div className="font-black uppercase tracking-tight text-sm">Arsitektur Alur Webhook</div>
-              <div className="text-[9px] text-gray-500 uppercase tracking-widest italic font-bold">Data Flow Real-time via Official Meta API</div>
+                <p className="text-[13px] font-black text-amber-900 uppercase tracking-tight leading-none mb-1">Phase 2 Production: Sales Performance Monitoring</p>
+                <p className="text-[11px] font-bold text-amber-700 uppercase tracking-widest leading-none">
+                    Setelah E-commerce Production, sistem akan diintegrasikan dengan Dashboard Monitoring Penjualan & Stock Real-time.
+                </p>
             </div>
-          </div>
+        </div>
 
-          {/* Flow Diagram with Bright Arrows */}
-          <div className="flex items-center justify-between relative px-4">
-            {[
-              { icon: "fa-user", title: "Customer Chat", desc: "Pesan masuk" },
-              { icon: "fa-whatsapp", title: "Meta API", desc: "Terima pesan", brand: true },
-              { icon: "fa-server", title: "Webhook Server", desc: "Proses data" },
-              { icon: "fa-database", title: "Database", desc: "Simpan data" },
-              { icon: "fa-chart-line", title: "Dashboard", desc: "Monitoring" },
-            ].map((step, index) => (
-              <React.Fragment key={index}>
-                <div className="relative z-10 flex flex-col items-center gap-2 min-w-[140px] group cursor-default">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border border-white/10 flex items-center justify-center text-red-500 group-hover:scale-110 group-hover:border-red-500 transition-all duration-500 shadow-xl">
-                    <i className={`${step.brand ? "fab" : "fas"} ${step.icon} text-lg group-hover:text-white`}></i>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-white text-[10px] font-black uppercase tracking-wider leading-none mb-1 group-hover:text-red-400 transition-colors">{step.title}</div>
-                    <div className="text-gray-500 text-[8px] font-bold uppercase tracking-tighter">{step.desc}</div>
-                  </div>
+        {/* CAPACITY ALERT */}
+        <div className="mt-auto bg-slate-900 rounded-2xl p-4 flex items-center justify-between shadow-xl border border-white/5 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 to-transparent"></div>
+            <div className="relative flex items-center gap-4 text-left">
+                <div className="flex items-center">
+                    <div className="w-2.5 h-2.5 bg-red-500 rounded-full animate-ping"></div>
+                    <div className="w-2.5 h-2.5 bg-red-600 rounded-full absolute"></div>
                 </div>
-
-                {index < 4 && (
-                  <div className="flex flex-col items-center justify-center px-2">
-                    <div className="relative w-12 flex items-center justify-center">
-                      <div className="absolute w-full h-[2px] bg-red-500/20 blur-sm"></div>
-                      <div className="w-full h-[2px] bg-gradient-to-r from-red-600 via-white to-red-600 rounded-full"></div>
-                      <i className="fas fa-caret-right absolute right-[-6px] text-white text-lg animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"></i>
-                    </div>
-                  </div>
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
-
-        {/* LOWER SECTION: FUNGSI & MANFAAT - Grid dengan sisa ruang yang aman */}
-        <div className="grid grid-cols-2 gap-8 h-[320px]">
-          <InfoCard 
-            icon="fa-cogs" 
-            title="Fungsi Webhook" 
-            accentColor="text-red-500"
-            items={[
-              { bold: "Menerima pesan masuk & keluar", desc: "Monitoring komunikasi customer" },
-              { bold: "Tracking komunikasi", desc: "Simpan history chat secara otomatis" },
-              { bold: "Integrasi dashboard", desc: "Real-time monitoring via panel" }
-            ]}
-          />
-
-          <InfoCard 
-            icon="fa-chart-bar" 
-            title="Manfaat Bisnis" 
-            accentColor="text-green-500"
-            items={[
-              { bold: "Monitoring real-time", desc: "Data chat tersimpan & terpusat" },
-              { bold: "Mudah dianalisa", desc: "Customer journey lebih terkontrol" },
-              { bold: "Terintegrasi CRM", desc: "Pantau langsung di aplikasi CRM Utama" }
-            ]}
-          />
-        </div>
-      </div>
-
-      {/* Bottom Bar - Konsisten */}
-      <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-[#0a0a0a]/90 backdrop-blur-md border-t border-white/5 flex items-center justify-between px-16 z-20">
-        <div className="absolute top-0 left-0 h-[2px] bg-red-600 shadow-[0_0_15px_#E31E24]" style={{ width: '55.5%' }}></div>
-        <div className="flex gap-10 text-gray-400">
-          <div className="flex items-center gap-2">
-            <i className="fas fa-calendar-alt text-red-500 text-xs"></i>
-            <span className="text-[11px] font-bold tracking-widest uppercase font-sans">April 2026</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <i className="fas fa-mobile text-red-500 text-xs"></i>
-            <span className="text-[11px] font-bold tracking-widest uppercase font-sans">Sinar Mas Selluler</span>
-          </div>
-        </div>
-        <div className="bg-red-600 px-6 py-1.5 rounded-md font-black italic shadow-lg text-white text-sm">V3.0</div>
-      </div>
-    </div>
-  );
-}
-
-function InfoCard({ icon, title, items, accentColor }) {
-  return (
-    <div className="bg-white/[0.03] border border-white/10 rounded-3xl p-5 flex flex-col h-full hover:bg-white/[0.05] transition-all group overflow-hidden">
-      <div className="flex items-center gap-3 mb-3 border-b border-white/5 pb-2">
-        <div className={`w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center ${accentColor} text-sm border border-white/10 group-hover:bg-red-600 group-hover:text-white transition-colors`}>
-          <i className={`fas ${icon}`}></i>
-        </div>
-        <div className="text-white text-[13px] font-black uppercase tracking-widest text-left">
-          {title}
-        </div>
-      </div>
-
-      <div className="space-y-2 flex-1 flex flex-col justify-center">
-        {items.map((item, idx) => (
-          <div key={idx} className="bg-white/[0.02] p-2 px-4 rounded-xl border border-white/5 flex flex-col items-start hover:border-red-500/20 transition-all group/item">
-            <div className={`${accentColor} font-black text-[10px] uppercase tracking-tighter leading-none mb-1 group-hover/item:scale-105 transition-transform origin-left`}>
-              {item.bold}
+                <div className="text-left leading-tight">
+                    <p className="text-white text-[12px] font-black uppercase tracking-widest mb-1">
+                        WARNING: KAPASITAS MENDEKATI LIMITASI MAKSIMAL
+                    </p>
+                    <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest">
+                        Pertumbuhan data member & transaksi E-commerce memerlukan upgrade resource ke paket Paladin segera.
+                    </p>
+                </div>
             </div>
-            <div className="text-gray-400 text-[11px] leading-tight text-left">
-              - {item.desc}
-            </div>
-          </div>
-        ))}
+            <div className="relative text-white/20 font-black italic text-sm pr-2">V2 RESOURCE CRITICAL</div>
+        </div>
+
+      </div>
+
+      {/* Bottom Bar - 70px */}
+      <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-slate-50/80 backdrop-blur-md border-t border-slate-200 flex items-center justify-between px-16 z-20 text-left">
+        <div className="absolute top-[-1px] left-0 h-[2px] bg-red-600 shadow-[0_0_10px_rgba(227,30,36,0.3)]" style={{ width: '48%' }}></div>
+        <div className="flex gap-10 text-slate-500">
+           <div className="flex items-center gap-2">
+                <i className="fab fa-node-js text-green-600 text-lg"></i>
+                <span className="text-[10px] font-black text-slate-600 tracking-widest uppercase">Node.js Engine</span>
+           </div>
+           <span className="text-[10px] font-black tracking-widest uppercase italic text-red-600">Ecosystem & Roadmap</span>
+        </div>
+        <div className="bg-slate-900 px-6 py-1.5 rounded-lg font-black italic shadow-md text-white text-xs tracking-tighter uppercase leading-none">V3.0</div>
       </div>
     </div>
   );

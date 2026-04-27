@@ -1,213 +1,130 @@
 import React from "react";
 
-export default function Slide6() {
+export default function Slide7() {
+  const mainStats = [
+    { label: "Number of Processes", current: "84", total: "100", percent: 84, icon: "fa-microchip", isBottleneck: true },
+    { label: "Entry Processes", current: "8", total: "25", percent: 32, icon: "fa-door-open" },
+    { label: "Physical Memory Usage", current: "402.23 MB", total: "4 GB", percent: 9.82, icon: "fa-memory" },
+    { label: "Disk Usage", current: "3.11 GB", total: "30 GB", percent: 10.38, icon: "fa-hdd" },
+  ];
+
   return (
-    <div className="w-[1280px] h-[720px] relative overflow-hidden bg-[#0f0f0f] text-white font-sans selection:bg-red-500/30">
+    <div className="w-[1280px] h-[720px] relative overflow-hidden bg-white text-slate-900 font-sans selection:bg-red-500/10 text-left">
       
-      {/* Background Decorative Glows */}
-      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-red-600/5 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-red-900/10 rounded-full blur-[100px]"></div>
+      {/* Background Decorative */}
+      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-red-500/[0.03] rounded-full blur-[120px]"></div>
 
-      {/* Header - KONSISTEN */}
-      <div className="absolute top-0 left-0 right-0 h-[90px] z-30 flex items-center px-12">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#E31E24] to-[#8b1216] opacity-95 shadow-xl"></div>
-        <div className="relative flex items-center gap-5 text-left">
-          <div className="bg-white/20 p-2.5 rounded-xl backdrop-blur-md border border-white/30 text-white text-2xl">
-             <i className="fas fa-project-diagram"></i>
+      {/* Header - KONSISTEN LIGHT MODE */}
+      <div className="absolute top-0 left-0 right-0 h-[80px] z-30 flex items-center px-12">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#E31E24] to-[#8b1216] shadow-md"></div>
+        <div className="relative flex items-center gap-4">
+          <div className="bg-white/20 p-2.5 rounded-xl backdrop-blur-md border border-white/30 text-white shadow-inner">
+             <i className="fas fa-microchip text-xl"></i>
           </div>
-          <div>
-            <div className="text-2xl font-black tracking-tighter italic uppercase drop-shadow-md leading-none mb-1">BAGAN PERBANDINGAN</div>
-            <div className="text-[10px] uppercase tracking-[0.2em] text-white/70 font-semibold text-left">Analisis Infrastruktur: Vendor vs Meta API</div>
+          <div className="text-left leading-none">
+            <h1 className="text-xl font-black tracking-tighter italic uppercase drop-shadow-md text-white">IDENTIFIKASI BOTTLENECK SISTEM</h1>
+            <div className="text-[9px] uppercase tracking-[0.2em] text-white/80 font-bold mt-1 text-left">Analisis Batasan Resource: Guardian vs Paladin</div>
           </div>
         </div>
-        <div className="ml-auto relative">
-          <div className="bg-black/20 backdrop-blur-md border border-white/10 px-4 py-2 rounded-lg text-[10px] font-bold tracking-widest uppercase">
-            Efficiency Analysis V2 vs V3
-          </div>
+        <div className="ml-auto bg-black/10 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 text-[10px] font-bold tracking-widest uppercase text-white">
+          System Critical Analysis
         </div>
       </div>
 
-      {/* Main Content Area - Locked Height 560px */}
-      <div className="absolute top-[90px] left-0 right-0 h-[560px] flex flex-col justify-center px-16 z-10 py-6">
+      {/* Main Content Area */}
+      <div className="absolute top-[80px] left-0 right-0 h-[570px] flex px-16 gap-10 items-center z-10 py-10">
         
-        {/* FLOW COMPARISON SECTION */}
-        <div className="bg-white/[0.03] border border-white/5 rounded-3xl p-6 shadow-2xl mb-6 relative overflow-hidden">
-          <div className="flex items-center gap-3 mb-6 border-b border-white/5 pb-3">
-            <div className="w-8 h-8 rounded-lg bg-red-600/20 flex items-center justify-center text-red-500 text-sm border border-red-600/20">
-              <i className="fas fa-exchange-alt"></i>
+        {/* LEFT: VISUAL STATISTICS */}
+        <div className="w-[55%] h-full flex flex-col justify-center">
+            <div className="mb-8 text-left">
+                <h2 className="text-3xl font-black italic tracking-tighter text-slate-900 uppercase leading-none">Resource Monitor</h2>
+                <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest mt-2">Data Real-time Penggunaan Server Dewaweb</p>
             </div>
-            <div className="text-left font-black uppercase tracking-tight text-sm">Perbandingan Alur Sistem</div>
-          </div>
 
-          <div className="grid grid-cols-2 gap-8 relative">
-            {/* Vertical Divider */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-white/10 -translate-x-1/2 hidden lg:block"></div>
-
-            {/* PIHAK KE 3 (LAMA) */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 mb-2 px-2">
-                <div className="w-2 h-2 rounded-full bg-red-500"></div>
-                <div className="text-xs font-black uppercase tracking-widest text-red-500">Pihak Ke-3 (Sistem Lama)</div>
-              </div>
-              <div className="flex items-center justify-between bg-black/40 p-4 rounded-2xl border border-white/5">
-                  {[
-                    { icon: "fa-user", text: "Customer" },
-                    { icon: "fa-whatsapp", text: "WhatsApp App", brand: true },
-                    { icon: "fa-hdd", text: "Vendor Gateway" },
-                    { icon: "fa-exchange-alt", text: "API Bridge" },
-                    { icon: "fa-server", text: "Internal Server" },
-                  ].map((step, index) => (
-                  <React.Fragment key={index}>
-                    <div className="flex flex-col items-center gap-1.5 min-w-[60px]">
-                      <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/40">
-                        <i className={`${step.brand ? "fab" : "fas"} ${step.icon} text-sm`}></i>
-                      </div>
-                      <span className="text-[9px] font-bold text-white/30 uppercase">{step.text}</span>
+            <div className="grid grid-cols-2 gap-6">
+                {mainStats.map((stat, idx) => (
+                    <div key={idx} className={`p-5 rounded-[2rem] border transition-all ${stat.isBottleneck ? 'bg-red-50 border-red-200 shadow-lg scale-105' : 'bg-slate-50 border-slate-100 opacity-60'}`}>
+                        <div className="flex justify-between items-start mb-4">
+                            <div className={`w-10 h-10 rounded-xl flex items-center justify-center shadow-inner ${stat.isBottleneck ? 'bg-red-600 text-white animate-pulse' : 'bg-white text-slate-400 border border-slate-100'}`}>
+                                <i className={`fas ${stat.icon} text-lg`}></i>
+                            </div>
+                            <div className="text-right">
+                                <div className={`text-[9px] font-black uppercase tracking-widest leading-none mb-1 ${stat.isBottleneck ? 'text-red-600' : 'text-slate-400'}`}>{stat.label}</div>
+                                <div className="text-lg font-black text-slate-800 tracking-tight">{stat.current} <span className="text-slate-400 font-bold text-xs">/ {stat.total}</span></div>
+                            </div>
+                        </div>
+                        
+                        <div className="space-y-1.5">
+                            <div className="flex justify-between text-[9px] font-black uppercase">
+                                <span className={stat.isBottleneck ? "text-red-600" : "text-slate-500"}>Beban: {stat.percent}%</span>
+                                <span className="text-slate-400">Limit</span>
+                            </div>
+                            <div className="h-2 w-full bg-slate-200 rounded-full overflow-hidden">
+                                <div 
+                                    className={`h-full rounded-full transition-all duration-1000 ${stat.isBottleneck ? 'bg-red-600' : 'bg-slate-400'}`}
+                                    style={{ width: `${stat.percent}%` }}
+                                ></div>
+                            </div>
+                        </div>
+                        {stat.isBottleneck && (
+                            <div className="mt-3 flex items-center gap-2">
+                                <i className="fas fa-exclamation-triangle text-red-600 text-[10px]"></i>
+                                <span className="text-[8px] font-black text-red-600 uppercase tracking-tighter">Kritis: Mendekati Limitasi Node.js</span>
+                            </div>
+                        )}
                     </div>
-                    {index < 4 && <i className="fas fa-chevron-right text-[10px] text-white/10"></i>}
-                  </React.Fragment>
                 ))}
-              </div>
-              <div className="text-[11px] text-red-400 italic bg-red-500/5 py-2 px-4 rounded-lg border border-red-500/10 text-center">
-                ● Vendor harus melakukan "Scanned Session" terus menerus agar koneksi tidak terputus
-              </div>
             </div>
-
-            {/* META API (BARU) */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 mb-2 px-2">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                <div className="text-xs font-black uppercase tracking-widest text-green-500">Meta API (Sistem Baru)</div>
-              </div>
-              <div className="flex items-center justify-between bg-red-600/5 p-4 rounded-2xl border border-red-500/20">
-                    {[
-                      { icon: "fa-user", text: "Customer" },
-                      { icon: "fa-whatsapp", text: "WhatsApp APP", brand: true },
-                      { icon: "fa-cloud", text: "Meta API Server" },
-                      { icon: "fa-bolt", text: "Direct Webhook" },
-                      { icon: "fa-server", text: "Internal Server" },
-                    ].map((step, index) => (
-                  <React.Fragment key={index}>
-                    <div className="flex flex-col items-center gap-1.5 min-w-[60px] group">
-                      <div className="w-9 h-9 rounded-xl bg-red-600/20 border border-red-600/30 flex items-center justify-center text-red-500 group-hover:bg-red-600 group-hover:text-white transition-all">
-                        <i className={`${step.brand ? "fab" : "fas"} ${step.icon} text-sm`}></i>
-                      </div>
-                      <span className="text-[9px] font-bold text-white uppercase">{step.text}</span>
-                    </div>
-                    {index < 3 && <i className="fas fa-chevron-right text-[10px] text-red-500 animate-pulse"></i>}
-                  </React.Fragment>
-                ))}
-              </div>
-              <div className="text-[11px] text-green-400 italic bg-green-500/5 py-2 px-4 rounded-lg border border-green-500/10 text-center">
-                ● Zero Downtime: Infrastruktur dikelola langsung oleh Meta (99.9% Uptime).
-              </div>
-            </div>
-          </div>
         </div>
 
-        {/* COMPARISON TABLE SECTION */}
-        <div className="grid grid-cols-2 gap-8">
-          {/* LEFT TABLE - Dipecah Menjadi 2 Kolom */}
-          <div className="grid grid-cols-2 gap-3">
-            
-            {/* Kolom Kiri (Poin 1, 2, 3) */}
-            <div className="space-y-2">
-              {[
-                "Double Latency: Ada dua pemberhentian (Server Vendor & API Bridge) sebelum sampai ke Anda.",
-                "Pesan tertahan di Server Vendor sebelum diteruskan ke Webhook Internal",            
-                "Jika nomor HP yang di-scan di dashboard Watzap logout atau baterai HP mati, alur nomor 2 dan 3 langsung gagal total",
-              ].map((text, i) => (
-                <div key={i} className="flex items-center gap-3 bg-white/[0.02] border border-white/5 p-1 rounded-xl hover:bg-white/[0.05] transition-all min-h-[40px]">
-                  <i className="fas fa-times-circle text-red-500/50 text-xs"></i>
-                  <div className="text-gray-400 text-[10px] font-bold tracking-tight text-left leading-tight">
-                    {text}
-                  </div>
+        {/* RIGHT: TECHNICAL JUSTIFICATION */}
+        <div className="flex-1 h-full flex flex-col justify-center">
+            <div className="bg-slate-900 rounded-[2.5rem] p-8 shadow-2xl relative overflow-hidden border border-white/10 text-left">
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-red-600/20 blur-3xl rounded-full"></div>
+                
+                <h3 className="text-red-500 font-black uppercase tracking-[0.2em] text-xs mb-2">Technical Insight:</h3>
+                <h4 className="text-white font-black text-2xl uppercase tracking-tighter italic leading-none mb-6">Mengapa Harus <span className="text-red-500">Upgrade?</span></h4>
+                
+                <div className="space-y-6 relative z-10">
+                    <div className="border-l-2 border-red-600 pl-4">
+                        <p className="text-white text-xs font-black uppercase tracking-widest mb-1 text-left">The Process Limit</p>
+                        <p className="text-slate-200 text-[11px] leading-relaxed text-left bold-italic">
+                            Backend <span className="text-white font-bold">Node.js</span> membutuhkan slot proses untuk setiap integrasi Webhook & API WhatsApp. Saat ini kita sudah di <span className="text-red-500 font-black">84%</span>. Jika mencapai 100%, sistem akan <span className="text-white underline decoration-red-600">CRASH/FREEZE</span> meskipun RAM & Disk masih sisa banyak.
+                        </p>
+                    </div>
+
+                    <div className="border-l-2 border-slate-700 pl-4">
+                        <p className="text-slate-400 text-xs font-black uppercase tracking-widest mb-1 text-left text-nowrap">Memory & Disk Are Not The Problem</p>
+                        <p className="text-slate-200 text-[11px] leading-relaxed text-left bold-italic">
+                            RAM dan Disk saat ini memang masih lega karena data kita sangat efisien, namun hosting Dewaweb paket Guardian membatasi jumlah proses komputasi yang bisa berjalan bersamaan.
+                        </p>
+                    </div>
+
+                    <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
+                        <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-500">
+                                <i className="fas fa-check-circle"></i>
+                            </div>
+                            <div className="text-left">
+                                <p className="text-white text-[10px] font-black uppercase tracking-widest leading-none mb-1 text-left">Solusi Paladin Upgrade:</p>
+                                <p className="text-green-500 text-[12px] font-black italic tracking-tighter uppercase text-left">MENINGKATKAN LIMIT PROSES HINGGA 300%</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              ))}
             </div>
-
-            {/* Kolom Kanan (Poin ke-4) */}
-            <div className="space-y-2">
-              {[              
-                "Privacy: Data pesan mampir dan terbaca di database pihak ketiga sebelum sampai ke perusahaan.",        
-                "Biaya vendor - Beban biaya tahunan",
-                "Bergantung vendor - Maintenance terbatas",
-              ].map((text, i) => (
-                <div key={i} className="flex items-center gap-3 bg-white/[0.02] border border-white/5 p-1 rounded-xl hover:bg-white/[0.05] transition-all min-h-[40px]">
-                  <i className="fas fa-times-circle text-red-500/50 text-xs"></i>
-                  <div className="text-gray-400 text-[10px] font-bold tracking-tight text-left leading-tight">
-                    {text}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-
-          {/* RIGHT TABLE - Dipecah Menjadi 2 Kolom (Sesuai Benchmark V3) */}
-          <div className="grid grid-cols-2 gap-3">
-            
-            {/* Kolom Kiri (Poin 1, 2, 3) */}
-            <div className="space-y-2">
-              {[
-                "Meta mengirimkan data secara real-time menggunakan protokol HTTP yang sangat cepat ke endpoint server Anda. Latensi biasanya di bawah 500ms.",
-                "Pesan tidak lagi mampir ke server vendor. customer kirim pesan, infrastruktur global Meta langsung menerimanya.",
-                "Kontrol penuh - Maintenance mandiri & scalable",
-              ].map((text, i) => (
-                <div key={i} className="flex items-center gap-3 bg-red-600/5 border border-red-600/10 p-1 rounded-xl hover:border-red-600/30 transition-all min-h-[40px]">
-                  <i className="fas fa-check-circle text-green-500 text-xs"></i>
-                  <div className="text-white text-[10px] tracking-tight text-left leading-tight">
-                    {text}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="space-y-2">
-              {[
-                "End-to-End Encryption",
-                "Keamanan data terjamin langsung dari Meta ke Server Internal tanpa perantara.",
-                "Infrastruktur Resmi, terdaftar sebagai Official Business Account",
-              ].map((text, i) => (
-                <div key={i} className="flex items-center gap-3 bg-red-600/5 border border-red-600/10 p-1 rounded-xl hover:border-red-600/30 transition-all min-h-[40px]">
-                  <i className="fas fa-check-circle text-green-500 text-xs"></i>
-                  <div className="text-white text-[10px] tracking-tight text-left leading-tight">
-                    {text}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-        </div>
-
-        {/* CONCLUSION - Floating Badge */}
-        <div className="mt-8 relative h-12">
-          <div className="absolute inset-0 bg-red-600/20 blur-xl rounded-full"></div>
-          <div className="relative h-full bg-gradient-to-r from-red-600 to-[#8b1216] border border-white/20 rounded-2xl flex items-center justify-center px-8 shadow-2xl">
-            <i className="fas fa-lightbulb text-white mr-3 animate-bounce"></i>
-            <span className="text-sm font-black uppercase tracking-[0.1em]">
-              Kesimpulan: Meta API lebih <span className="text-yellow-400 italic">efisien</span> & <span className="text-yellow-400 italic">scalable</span> untuk sistem membership
-            </span>
-          </div>
         </div>
 
       </div>
 
-      {/* BOTTOM BAR - KONSISTEN */}
-      <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-[#0a0a0a]/90 backdrop-blur-md border-t border-white/5 flex items-center justify-between px-16 z-20">
-        <div className="absolute top-0 left-0 h-[2px] bg-red-600 shadow-[0_0_15px_#E31E24]" style={{ width: '66.6%' }}></div>
-        <div className="flex gap-10 text-gray-400">
-          <div className="flex items-center gap-2">
-            <i className="fas fa-calendar-alt text-red-500 text-xs"></i>
-            <span className="text-[11px] font-bold tracking-widest uppercase font-sans">April 2026</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <i className="fas fa-mobile text-red-500 text-xs"></i>
-            <span className="text-[11px] font-bold tracking-widest uppercase font-sans">Sinar Mas Selluler</span>
-          </div>
+      {/* Bottom Bar - KONSISTEN */}
+      <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-slate-50/80 backdrop-blur-md border-t border-slate-200 flex items-center justify-between px-16 z-20 text-left">
+        <div className="absolute top-[-1px] left-0 h-[3px] bg-red-600 shadow-[0_0_10px_rgba(227,30,36,0.3)]" style={{ width: '77.7%' }}></div>
+        <div className="flex gap-10 text-slate-500">
+           <span className="text-[11px] font-black tracking-widest uppercase">Bottleneck Identification</span>
+           <span className="text-[11px] font-black tracking-widest uppercase italic text-red-600 leading-none">Security & Stability First</span>
         </div>
-        <div className="bg-red-600 px-6 py-1.5 rounded-md font-black italic shadow-lg text-white text-sm">V3.0</div>
+        <div className="bg-slate-900 px-7 py-2 rounded-lg font-black italic shadow-md text-white text-sm tracking-tighter uppercase leading-none">V3.0</div>
       </div>
     </div>
   );
