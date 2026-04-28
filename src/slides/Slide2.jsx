@@ -2,53 +2,51 @@ import React from "react";
 
 export default function Slide4() {
   return (
-    <div className="w-[1280px] h-[720px] relative overflow-hidden bg-white text-slate-900 font-sans selection:bg-red-500/10 text-left">
+    <div className="w-[1280px] h-[720px] relative overflow-hidden bg-white text-slate-950 font-sans selection:bg-red-500/10 text-left">
       
-      {/* Background Decorative Elements - Softer for Light Mode */}
-      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-green-500/[0.03] rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-red-500/[0.03] rounded-full blur-[100px]"></div>
+      {/* Background Decorative Elements */}
+      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-green-500/[0.04] rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-red-500/[0.04] rounded-full blur-[100px]"></div>
 
-      {/* Header - KONSISTEN LIGHT MODE */}
-      <div className="absolute top-0 left-0 right-0 h-[90px] z-30 flex items-center px-12">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#E31E24] to-[#8b1216] shadow-md"></div>
-        <div className="relative flex items-center gap-5">
-          <div className="bg-white/20 p-2.5 rounded-xl backdrop-blur-md border border-white/30 text-white">
+      {/* Header - HIGH CONTRAST */}
+      <div className="absolute top-0 left-0 right-0 h-[85px] z-30 flex items-center px-12 text-left">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#E31E24] to-[#a5161a] shadow-xl"></div>
+        <div className="relative flex items-center gap-5 text-white">
+          <div className="bg-white/20 p-2.5 rounded-xl backdrop-blur-md border-2 border-white/40 shadow-inner">
              <i className="fab fa-whatsapp text-2xl"></i>
           </div>
-          <div className="text-left">
-            <div className="text-2xl font-black tracking-tighter italic uppercase drop-shadow-md text-white">DEVELOPMENT API META</div>
-            <div className="text-[10px] uppercase tracking-[0.2em] text-white/80 font-bold">Official WhatsApp Business Integration</div>
+          <div className="text-left leading-none">
+            <h1 className="text-2xl font-black tracking-tighter italic uppercase drop-shadow-md">DEVELOPMENT API META</h1>
+            <div className="text-[11px] uppercase tracking-[0.2em] font-black text-white/90 mt-1">Official WhatsApp Business Integration</div>
           </div>
         </div>
-        <div className="ml-auto relative">
-          <div className="bg-black/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-lg text-[10px] font-bold tracking-widest uppercase text-white">
-            Direct Meta Infrastructure • No Third Party
-          </div>
+        <div className="ml-auto bg-black/40 backdrop-blur-md px-6 py-2.5 rounded-lg border-2 border-white/20 text-[11px] font-black tracking-widest uppercase text-white shadow-lg">
+          Direct Meta Infrastructure • No Third Party
         </div>
       </div>
 
       {/* Main Content Area */}
-      <div className="absolute top-[90px] left-0 right-0 h-[560px] flex px-16 gap-10 items-center z-10 py-10">
+      <div className="absolute top-[85px] left-0 right-0 h-[565px] flex px-16 gap-10 items-center z-10 py-10">
 
-        {/* Left Panel - Strategic Objective */}
-        <div className="w-[30%]">
-          <div className="relative p-[1px] rounded-3xl bg-slate-200">
-            <div className="bg-slate-50 backdrop-blur-xl rounded-[23px] p-6 border border-slate-200 shadow-sm">
-              <div className="flex items-center gap-4 mb-5 border-b border-slate-200 pb-4">
-                <div className="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center text-white shadow-md">
-                  <i className="fas fa-bullseye text-lg"></i>
+        {/* Left Panel - Strategic Objective (ULTRA BOLD) */}
+        <div className="w-[32%]">
+          <div className="relative p-[2px] rounded-[2.5rem] bg-slate-950 shadow-2xl">
+            <div className="bg-white rounded-[2.3rem] p-8 border-2 border-slate-200">
+              <div className="flex items-center gap-4 mb-6 border-b-2 border-slate-100 pb-5">
+                <div className="w-12 h-12 bg-red-600 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                  <i className="fas fa-bullseye text-xl"></i>
                 </div>
                 <div className="text-left leading-none">
-                  <div className="font-black uppercase tracking-tight text-lg mb-1 text-slate-900">Tujuan</div>
-                  <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Strategic Goal</div>
+                  <div className="font-black uppercase tracking-tighter text-xl mb-1 text-slate-950">Tujuan</div>
+                  <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Strategic Goal</div>
                 </div>
               </div>
 
-              <p className="text-[13px] text-slate-600 mb-6 leading-relaxed text-left font-medium">
+              <p className="text-[14px] text-slate-900 mb-8 leading-relaxed text-left font-black uppercase tracking-tight italic">
                 Mengalihkan seluruh trafik pesan dari sistem lama ke infrastruktur resmi Cloud API Meta untuk keamanan maksimal.
               </p>
 
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <Objective text="Integrasi Meta Cloud API Resmi" />
                 <Objective text="Eliminasi Ketergantungan Vendor" />
                 <Objective text="Sistem Scalable & Real-time" />
@@ -59,63 +57,61 @@ export default function Slide4() {
         </div>
 
         {/* Right Panel - Grid System */}
-        <div className="flex-1 flex flex-col justify-center gap-4 h-full">
+        <div className="flex-1 flex flex-col justify-center gap-1 h-full">
           
-          {/* Comparison Section */}
-          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 shadow-sm text-left">
-            <div className="flex items-center gap-3 mb-4 border-b border-slate-200 pb-2">
-              <div className="w-7 h-7 bg-red-600 rounded-lg flex items-center justify-center text-white shadow-sm">
-                <i className="fas fa-exchange-alt text-xs"></i>
+          {/* Comparison Section (THICK BORDERS) */}
+          <div className="bg-white border-[3px] border-slate-200 rounded-[2rem] p-4 shadow-xl text-left">
+            <div className="flex items-center gap-4 mb-5 border-b-2 border-slate-100 pb-3">
+              <div className="w-8 h-8 bg-slate-950 rounded-xl flex items-center justify-center text-white shadow-md">
+                <i className="fas fa-exchange-alt text-sm"></i>
               </div>
-              <div className="font-black text-[11px] uppercase tracking-widest text-left text-slate-800">Analisis Perubahan Arsitektur</div>
+              <div className="font-black text-[12px] uppercase tracking-widest text-left text-slate-950">Analisis Perubahan Arsitektur</div>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4">
               {/* Kolom Kiri - Kondisi Sebelumnya (V2) */}
-              <div className="space-y-2">
-                <div className="text-[10px] font-black text-red-600 uppercase tracking-tighter mb-2 flex items-center gap-2 text-left">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse"></span>
+              <div className="space-y-3">
+                <div className="text-[11px] font-black text-red-700 uppercase tracking-tight mb-3 flex items-center gap-2 text-left">
+                  <span className="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse shadow-[0_0_8px_#E31E24]"></span>
                   Pihak Ke-3 (Watzap.id)
                 </div>
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   <OldCondition text="Bergantung pada server pihak ketiga" />
-                  <OldCondition text="Biaya tetap tahunan Rp 800.000" />
                   <OldCondition text="Nomor rawan terblokir (Unofficial)" />
                   <OldCondition text="Sering terjadi downtime & antrian" />
-                  <OldCondition text="Akses API terbatas hanya fitur vendor" />
+                  <OldCondition text="Akses API terbatas fitur vendor" />
                 </div>
               </div>
 
               {/* Kolom Kanan - Keuntungan Mandiri (V3) */}
-              <div className="space-y-2">
-                <div className="text-[10px] font-black text-green-600 uppercase tracking-tighter mb-2 flex items-center gap-2 text-left">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-600 shadow-[0_0_8px_rgba(34,197,94,0.4)]"></span>
+              <div className="space-y-3 text-left">
+                <div className="text-[11px] font-black text-green-700 uppercase tracking-tight mb-3 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-600 shadow-[0_0_10px_#22c55e]"></span>
                   Meta Cloud API (V3)
                 </div>
-                <div className="space-y-1.5 text-left">
+                <div className="space-y-2">
                   <Benefit text="Langsung terhubung ke Server Meta" />
                   <Benefit text="Skema Bayar Sesuai Pemakaian" />
                   <Benefit text="Nomor Resmi (Official Business)" />
-                  <Benefit text="Uptime 99.9% Tanpa Maintenance Vendor" />
-                  <Benefit text="Kontrol penuh Webhook & Metadata" />
+                  <Benefit text="Uptime 99.9% Tanpa Vendor" />
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Pricing Estimation Section */}
-          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 shadow-sm">
-            <div className="flex items-center justify-between mb-4 border-b border-slate-200 pb-2">
-              <div className="flex items-center gap-3">
-                <div className="w-7 h-7 bg-blue-600 rounded-lg flex items-center justify-center text-white shadow-sm">
-                  <i className="fas fa-receipt text-xs"></i>
+          {/* Pricing Estimation Section - BOLDER */}
+          <div className="bg-white border-[3px] border-slate-200 rounded-[2rem] p-4 shadow-xl">
+            <div className="flex items-center justify-between mb-5 border-b-2 border-slate-100 pb-3">
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-8 bg-blue-700 rounded-xl flex items-center justify-center text-white shadow-md">
+                  <i className="fas fa-receipt text-sm"></i>
                 </div>
-                <div className="font-black text-[11px] uppercase tracking-widest text-left text-slate-800">Struktur Biaya Meta (Estimasi)</div>
+                <div className="font-black text-[12px] uppercase tracking-widest text-left text-slate-950">Struktur Biaya Meta (Estimasi)</div>
               </div>
-              <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-md border border-slate-200">IDR / Message</div>
+              <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest bg-slate-100 px-4 py-1.5 rounded-lg border-2 border-slate-200">IDR / Message</div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 text-left">
+            <div className="grid grid-cols-2 gap-4 text-left">
               <Cost title="Verifikasi Bisnis" price="FREE" desc="Otoritas Resmi Meta" isFree />
               <Cost title="Utility Messages" price="± Rp 350" desc="Notifikasi Transaksi" />
               <Cost title="Authentication" price="± Rp 450" desc="Keamanan OTP / Auth" />
@@ -126,56 +122,56 @@ export default function Slide4() {
         </div>
       </div>
 
-      {/* Bottom Bar - KONSISTEN LIGHT MODE */}
-      <div className="absolute bottom-0 left-0 right-0 h-[70px] bg-slate-50/80 backdrop-blur-md border-t border-slate-200 flex items-center justify-between px-16 z-20 text-left">
-        <div className="absolute top-[-1px] left-0 h-[3px] bg-red-600 shadow-[0_0_10px_rgba(227,30,36,0.3)]" style={{ width: '44.4%' }}></div>
-        <div className="flex gap-10 text-slate-500">
-          <div className="flex items-center gap-2">
-            <i className="fas fa-calendar-alt text-red-600 text-xs"></i>
-            <span className="text-[11px] font-black tracking-widest uppercase">April 2026</span>
+      {/* Bottom Bar - BOLD & CONSISTENT */}
+      <div className="absolute bottom-0 left-0 right-0 h-[75px] bg-slate-100 border-t-[3px] border-slate-200 flex items-center justify-between px-16 z-20 text-left">
+        <div className="absolute top-[-3px] left-0 h-[5px] bg-red-600 shadow-[0_0_15px_rgba(227,30,36,0.5)]" style={{ width: '44.4%' }}></div>
+        <div className="flex gap-12 text-slate-950">
+          <div className="flex items-center gap-3">
+            <i className="fas fa-calendar-alt text-red-600 text-lg"></i>
+            <span className="text-[12px] font-black tracking-widest uppercase">April 2026</span>
           </div>
-          <div className="flex items-center gap-2">
-            <i className="fas fa-building text-red-600 text-xs"></i>
-            <span className="text-[11px] font-black tracking-widest uppercase">Sinar Mas Selluler</span>
+          <div className="flex items-center gap-3">
+            <i className="fas fa-building text-red-600 text-lg"></i>
+            <span className="text-[12px] font-black tracking-widest uppercase italic">Sinar Mas Selluler</span>
           </div>
         </div>
-        <div className="bg-slate-900 px-7 py-2 rounded-lg font-black italic shadow-md text-white text-sm uppercase tracking-tighter">V3.0</div>
+        <div className="bg-slate-950 px-8 py-3 rounded-xl font-black italic shadow-2xl text-white text-sm tracking-tighter uppercase leading-none border-2 border-white/10">V3.0</div>
       </div>
     </div>
   );
 }
 
-{/* SUB-COMPONENTS */}
+{/* SUB-COMPONENTS - OPTIMIZED FOR CONTRAST */}
 
 function Objective({ text }) {
   return (
-    <div className="flex gap-3 items-center group">
-      <div className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center border border-red-200 group-hover:bg-red-600 transition-all duration-300">
-        <i className="fas fa-check text-[8px] text-red-600 group-hover:text-white"></i>
+    <div className="flex gap-4 items-center group">
+      <div className="w-6 h-6 rounded-xl bg-red-600 flex items-center justify-center shadow-md">
+        <i className="fas fa-check text-[10px] text-white"></i>
       </div>
-      <div className="text-[11px] text-slate-600 font-bold group-hover:text-slate-900 transition-colors text-left uppercase tracking-tight leading-none">{text}</div>
+      <div className="text-[12px] text-slate-950 font-black uppercase tracking-tight leading-none group-hover:text-red-700 transition-colors">{text}</div>
     </div>
   );
 }
 
 function Benefit({ text }) {
   return (
-    <div className="flex gap-3 items-center bg-white border border-slate-200 p-2 px-3 rounded-xl hover:bg-green-50 hover:border-green-300 transition-all group">
-      <i className="fas fa-check-double text-green-600 text-[10px] group-hover:scale-110 transition-transform"></i>
-      <div className="text-[10px] text-slate-500 font-bold text-left leading-tight uppercase tracking-tighter group-hover:text-slate-800">{text}</div>
+    <div className="flex gap-4 items-center bg-white border-2 border-slate-200 p-2.5 px-4 rounded-xl hover:border-green-500 transition-all group">
+      <i className="fas fa-check-double text-green-600 text-[11px] font-black"></i>
+      <div className="text-[11px] text-slate-950 font-black text-left leading-tight uppercase tracking-tighter">{text}</div>
     </div>
   );
 }
 
 function Cost({ title, price, desc, isFree }) {
   return (
-    <div className={`flex items-center justify-between p-2.5 px-4 rounded-xl border transition-all group ${isFree ? 'bg-green-50 border-green-200' : 'bg-white border-slate-200 hover:border-red-400 hover:shadow-sm'}`}>
+    <div className={`flex items-center justify-between p-3 px-5 rounded-2xl border-[2.5px] transition-all group ${isFree ? 'bg-green-50 border-green-500 shadow-md' : 'bg-white border-slate-200 hover:border-red-600 shadow-sm'}`}>
       <div className="text-left leading-none">
-        <div className={`text-[10px] font-black uppercase tracking-tight mb-1 ${isFree ? 'text-green-700' : 'text-slate-800 group-hover:text-red-600'}`}>{title}</div>
-        <div className="text-[8px] text-slate-400 uppercase font-black tracking-widest">{desc}</div>
+        <div className={`text-[11px] font-black uppercase tracking-tight mb-1.5 ${isFree ? 'text-green-800' : 'text-slate-950 group-hover:text-red-600'}`}>{title}</div>
+        <div className={`text-[9px] font-black tracking-widest uppercase ${isFree ? 'text-green-600' : 'text-slate-500'}`}>{desc}</div>
       </div>
       <div className="text-right leading-none">
-        <div className={`font-black text-[14px] tracking-tighter italic ${isFree ? 'text-green-600' : 'text-red-600'}`}>{price}</div>
+        <div className={`font-black text-[16px] tracking-tighter italic ${isFree ? 'text-green-700' : 'text-red-600'}`}>{price}</div>
       </div>
     </div>
   );
@@ -183,9 +179,9 @@ function Cost({ title, price, desc, isFree }) {
 
 function OldCondition({ text }) {
   return (
-    <div className="flex gap-3 items-start bg-red-50 border border-red-100 p-2 px-3 rounded-xl group transition-all">
-      <i className="fas fa-times-circle text-red-500 text-[10px] mt-0.5 opacity-60 group-hover:opacity-100 transition-opacity"></i>
-      <div className="text-[10px] text-slate-500 font-bold text-left leading-tight group-hover:text-slate-800 uppercase tracking-tighter">{text}</div>
+    <div className="flex gap-4 items-center bg-red-50 border-2 border-red-100 p-2.5 px-4 rounded-xl group transition-all">
+      <i className="fas fa-times-circle text-red-600 text-[11px] font-black"></i>
+      <div className="text-[11px] text-slate-800 font-black text-left leading-tight uppercase tracking-tighter italic">{text}</div>
     </div>
   );
 }
