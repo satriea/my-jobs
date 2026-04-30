@@ -76,12 +76,12 @@ export default function Slide6CostComparison() {
                <OptionItem 
                   num="2" 
                   title="IMEI-Based Notification" 
-                  desc="Kurang efisien secara fiskal karena volume IMEI > jumlah Member (Rasio 1:2)." 
+                  desc="Kurang efisien secara karena volume IMEI > jumlah Member (Rasio 1:2)." 
                />
                <OptionItem 
                   num="3" 
                   title="Protection & Tiering Focus" 
-                  desc="Hanya member Diamond/Platinum dengan produk Proteksi yang menerima WA. Efisiensi fiskal tertinggi." 
+                  desc="Hanya member Diamond/Platinum dengan produk Proteksi yang menerima WA. Efisiensi tertinggi." 
                   isRecommended
                />
             </div>
