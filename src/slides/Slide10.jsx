@@ -41,7 +41,7 @@ export default function Slide8() {
         </p>
 
         {/* Closing Pillars - Tampilan Baru untuk Light Mode */}
-        <div className="grid grid-cols-3 gap-8 w-full max-w-4xl text-left">
+        <div className="grid grid-cols-2 gap-8 w-full max-w-4xl text-left">
           {[
             { icon: "fa-chart-pie", title: "Cost Optimized", desc: "Meta API & Email Sync" },
             { icon: "fa-sync", title: "Future Ready", desc: "Automated Monitoring" },
